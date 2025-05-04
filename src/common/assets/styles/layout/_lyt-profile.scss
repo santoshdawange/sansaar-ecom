@@ -1,0 +1,41 @@
+//lyt-profile
+.lyt-profile{
+    $self:&;
+
+    &__header{
+        margin-block-end: rem(36px);
+    }
+
+    &__title{
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
+    }
+
+    &__title-text{
+        font-size: $fs-h2-sm;
+        line-height: $lh-h2-sm;
+        color: $clr-black;
+        font-family: $font2;
+        text-transform: uppercase;
+    }
+
+    &__body{
+        display: flex;
+        align-items: flex-start;
+        gap: rem(48px);
+
+        #{$self}__menu-wrap{
+            position: sticky;
+            top: rem(155px);
+            align-self: flex-start;
+            width: rem(346px);
+        }
+
+        #{$self}__cont-wrap{
+            flex-grow: 1; 
+            width: calc(100% - rem(500px));
+        }
+    }
+
+}

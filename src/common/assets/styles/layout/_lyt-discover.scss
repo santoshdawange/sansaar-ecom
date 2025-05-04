@@ -1,0 +1,32 @@
+//lyt-discover
+.lyt-discover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(162px);
+    padding-block: rem(60px);
+    @include mq-below($sm) {
+        gap: rem(80px);
+        flex-direction: column;
+        padding-block: rem(30px);
+        padding-inline: rem(16px);
+    }
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: rem(25px);
+        }
+    }
+    @include mq-between($sm2, $lg){
+        @include orientation(portrait){
+            padding-block-start: rem(24px);
+            padding-block-end: rem(28px);
+        }
+    }
+    &__item {
+        @include mq-below($sm) {
+            width: 100%;
+        }
+    }
+}

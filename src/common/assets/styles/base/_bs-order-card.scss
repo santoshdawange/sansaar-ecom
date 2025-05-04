@@ -1,0 +1,203 @@
+//bs-order-card
+.bs-order-card{
+    $self:&;
+    border: 1px solid $clr-pallet-5;
+    border-radius: rem(12px);
+    padding: rem(20px) rem(24px);
+
+    &__title{
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
+
+        #{$self}__title-text{
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+            font-weight: $font-semi-bold;
+            text-transform: capitalize;
+        }
+
+        #{$self}__icon{
+            width: rem(28px);
+            height: rem(28px);
+        }
+    }
+
+    &__title-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(24px);
+    }
+
+    &__head-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-end: rem(12px);
+    }
+
+    &__action-list{
+        display: flex;
+        align-items: center;
+        gap: rem(40px);
+    }
+
+    &__action-item{
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            height: rem(24px);
+            right: rem(-22px);
+            width: 1px;
+            background-color: $clr-dark;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:last-child{
+            &:after{
+                display: none;
+            }
+        }
+    }
+
+    &__order-info-wrap{
+        padding: rem(12px) 0;
+    }
+
+    &__order-info-data-wrap{
+        display: flex;
+        align-items: flex-end;
+        gap: rem(24px);
+    }
+
+    &__order-info-data-item{
+        display: flex;
+        align-items: flex-end;
+        gap: rem(8px);
+    }
+
+    &__order-info-data-label{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: capitalize;
+        font-weight: $font-semi-bold;
+    }
+
+    &__order-info-data-value{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: capitalize;
+
+        &--bold{
+            font-weight: $font-semi-bold;
+        }
+    }
+
+    &__product-info-wrap{
+        padding: rem(12px) 0;
+        border-block: 2px dotted opaqueColor($clr-black, 0.2);
+
+        &--no-bottom-border{
+            border-block-end: none;
+        }
+    }
+
+    &__product{
+        display: flex;
+        gap: rem(20px);
+        align-items: center;
+    }
+
+    &__product-media-wrap{
+        width: rem(115px);
+        height: rem(120px);
+        border-radius: rem(8px);
+        overflow: hidden;
+    }
+
+    &__product-type{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        display: block;
+        margin-block-end: rem(8px);
+    }
+
+    &__product-title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        font-weight: $font-semi-bold;
+        margin-block-end: rem(16px);
+    }
+
+    &__product-size-info{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        color: $clr-grey-3;
+        text-transform: capitalize;
+
+        &--bold{
+            text-transform: uppercase;
+            font-weight: $font-semi-bold;
+        }
+    }
+
+    &__product-item{
+        padding-block: rem(20px);
+        border-block: 1px dashed opaqueColor($clr-black, 0.1);
+
+        &:first-child{
+            border-block-start: none;
+        }
+
+        &:last-child{
+            border-block-end: none;
+        }
+    }
+
+    &__address-wrap{
+        padding-block-start: rem(12px);
+    }
+
+    &__address-wrap-title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        display: block;
+        margin-block-end: rem(12px);
+    }
+
+    &__address-title-wrap{
+        margin-block-end: rem(8px);
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
+    }
+
+    &__address-title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        font-weight: $font-semi-bold;
+        text-transform: capitalize;
+    }
+
+    &__address-text{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+    }
+
+    .mod-product-tag{
+        font-size: $fs-h9;
+        line-height: $lh-h9;
+        font-weight: $font-semi-bold;
+        padding: rem(2px) rem(8px);
+    }
+
+    
+
+
+}

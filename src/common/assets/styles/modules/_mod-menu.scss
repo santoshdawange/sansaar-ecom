@@ -1,0 +1,37 @@
+//mod-menu
+.mod-menu{
+    $self:&;
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    padding: rem(32px) rem(12px);
+    transition: all 0.3s ease;
+    border-radius: rem(12px);
+
+
+    &__icon{
+        width: rem(28px) !important;
+        height: rem(28px) !important;
+        @include background-opacity($clr-grey-3, 1);   
+    }
+
+    &__text{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    &:hover{
+        background-color: $clr-light;
+    }
+
+    &--active{
+        background-color: $clr-light;
+
+        #{$self}__text{
+            font-weight: $font-bold;
+        }
+    }
+
+}

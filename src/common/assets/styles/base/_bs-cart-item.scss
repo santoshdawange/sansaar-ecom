@@ -1,0 +1,129 @@
+//bs-cart-item
+.bs-cart-item{
+    $self:&;
+    display: flex;
+    align-items: flex-start;
+    gap: 0 rem(60px);
+
+    &__media-wrap{
+        width: rem(160px);
+        height: rem(160px);
+        object-fit: cover;
+        border-radius: rem(12px);
+        overflow: hidden;
+    }
+
+    &__title-wrap{
+        padding: rem(12px) 0;
+    }
+
+    &__info-wrap{
+        display: flex;
+        align-items: flex-start;
+        gap: 0 rem(28px);
+    }
+
+    &__more-info-wrap{
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding: rem(12px) 0;
+    }
+
+    &__type, &__title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+    }
+
+    &__type{
+        margin-block-end: rem(8px);
+        display: inline-block;
+    }
+
+    &__title{
+        font-weight: $font-semi-bold;
+        margin-block-end: rem(16px);
+    }
+
+    &__size{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        margin-block-end: rem(20px);
+
+        &--txt-semi-bold{
+            font-weight: $font-semi-bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &__text{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        color: $clr-grey-3;
+        text-transform: capitalize;
+        margin-block-start: rem(10px);
+    }
+
+    &__price{
+        font-size: $fs-h4;
+        line-height: $lh-h4;
+    }
+
+    &__like{
+        display: flex;
+        align-items: center;
+        gap: 0 rem(8px);
+
+    }
+
+    &__btn{
+        #{$self}__btn-text{
+            font-size: $fs-h8;
+            line-height: $lh-h8;
+            font-weight: $font-bold;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        #{$self}__btn-icon{
+            width: rem(24px);
+            height: rem(24px);
+
+            &.icon{
+                background: $clr-dark;
+            }
+        }
+    }
+
+    &__tag{
+
+        &.mod-product-tag{
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+            font-weight: $font-semi-bold;
+            color: $clr-dark;
+            background-color: $clr-pallet-6;
+            padding: rem(2px) rem(6px);
+        }
+        
+    }
+
+    &__price-n-discount{
+        display: flex;
+        align-items: center;
+        gap: 0 rem(4px);
+    }
+
+    &__price-wrap{
+        align-items: flex-start;
+        text-align: right;
+    }
+
+    .bs-counter-widget{
+        margin-block-start: rem(40px);
+    }
+
+
+}

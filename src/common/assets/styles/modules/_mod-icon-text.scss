@@ -1,0 +1,18 @@
+//mod-icon-text
+.mod-icon-text{
+    width: rem(86px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon{
+        width: rem(50px) !important;
+        height: rem(50px) !important;
+    }
+
+    &__label{
+        font-size: rem(8px);
+        line-height: rem(12px);
+    }
+
+}

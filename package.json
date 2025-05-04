@@ -1,0 +1,75 @@
+{
+  "name": "sansaar",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.19.0",
+    "@craco/craco": "^7.1.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@googlemaps/markerclusterer": "^2.5.3",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.0",
+    "@react-google-maps/api": "^2.19.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/yup": "^0.32.0",
+    "@vis.gl/react-google-maps": "^1.1.0",
+    "axios": "^1.7.2",
+    "cloudinary-video-player": "^2.0.4",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
+    "formik": "^2.4.6",
+    "instafeed.js": "^2.0.0",
+    "moment": "^2.30.1",
+    "react": "^18.3.1",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.3.1",
+    "react-fast-marquee": "^1.6.5",
+    "react-google-recaptcha": "^3.1.0",
+    "react-medium-image-zoom": "^5.2.10",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "react-share": "^5.1.0",
+    "react-social-media-embed": "^2.5.17",
+    "react-toastify": "^11.0.5",
+    "react-widgets": "^5.8.4",
+    "swiper": "^11.2.4",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
+    "ajv": "^8.17.1",
+    "craco-alias": "^3.0.1",
+    "sass": "^1.72.0",
+    "sass-loader": "^14.1.1",
+    "webpack": "^5.90.3"
+  }
+}

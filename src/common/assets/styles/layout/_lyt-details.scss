@@ -1,0 +1,41 @@
+//lyt-details
+.lyt-details{
+    position: relative;
+
+    @include mq-below($sm) {
+        padding-block-start: rem(60px) !important;
+    }
+
+    @include mq-between($sm, $lg){
+        @include orientation(portrait){
+            padding-block-start: rem(60px) !important;
+        }
+    }
+
+    &__action{
+        position: absolute;
+        left: rem(230px);
+        top: rem(60px);
+        z-index: 1;
+
+        @include mq-below($sm){
+            left: rem(20px);
+            top: rem(30px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(landscape){
+                left: rem(90px);
+            }
+        }
+    
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                left: rem(50px);
+            }
+        }
+    }
+
+
+}

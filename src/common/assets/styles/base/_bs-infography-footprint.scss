@@ -1,0 +1,108 @@
+//bs-infography-footprint
+.bs-infography-footprint{
+    $self: &;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 0 rem(150px);
+    padding-block: rem(50px);
+
+    &__info-wrap{
+        width: rem(660px);
+        text-align: left;
+    }
+
+    &__title{
+        margin-block-end: rem(12px);
+    }
+
+    &__desc{
+        font-size: $fs-h6;
+        line-height: $lh-h4;
+        margin-block-end: rem(40px);
+    }
+
+    &__feature{
+        font-size: $fs-h6;
+        line-height: $lh-h4;
+        text-transform: capitalize;
+        color: $clr-dark;
+        max-width: 50%;
+    }
+
+    &__feature-item{
+        display: flex;
+        align-items: center;
+        gap: 0 rem(12px);
+    }
+
+    &__feature-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(36px);
+        margin-block-end: rem(40px);
+    }
+
+    &__icon-wrap{
+        width: rem(72px);
+        height: rem(72px);
+        border-radius: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @include background-opacity($clr-dark-3, 0.1);
+    }
+
+    &__action{
+        padding: rem(20px) rem(32px);
+    }
+
+    &__image{
+        object-fit: cover;
+    }
+
+    &__big-img-wrap{
+        width: rem(780px);
+        height: rem(780px);
+        border-radius: rem(18x);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+    }
+
+    &__smimg-wrap{
+        width: rem(420px);
+        width: rem(420px);
+        border: 5px solid $clr-light-3;
+        border-radius: rem(20px);
+        overflow: hidden;
+    }
+
+    &__media-wrap{
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+
+        #{$self}__smimg-wrap{
+            position: absolute;
+            left: rem(-200px);
+            bottom: rem(-70px);
+            z-index: 2;
+        }
+
+        &:before{
+            content: '';
+            position: absolute;
+            left: -36%;
+            top: 9%;
+            background: url('../../images/shop/pattern-1.svg') no-repeat 0 0 transparent;
+            background-size: 100% 100%;
+            background-position: top left;
+            width: rem(350px);
+            height: rem(350px);
+        }
+    }
+
+
+}

@@ -1,0 +1,41 @@
+.lyt-check-list {
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    // gap: rem(12px);
+    &__item {
+        column-count: 2;
+
+        .bs-checkbox {
+            padding-block: rem(4px);
+            input {
+                &:checked + label:after {
+                    top: rem(4px);
+                    left: rem(4.5px);
+                    width: rem(3px);
+                    height: rem(8px);
+                    border-width: 0 rem(2px) rem(2px) 0;
+                }
+            }
+            &__label {
+                font-size: $fs-h9;
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                padding-inline-start: rem(20px);
+                position: relative;
+                &::before {
+                    width: rem(12px);
+                    height: rem(12px);
+                    margin-inline-end: rem(4px);
+                    border-radius: rem(3px);
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+    }
+    
+}

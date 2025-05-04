@@ -1,0 +1,127 @@
+//lyt-goals
+.lyt-goals{
+    $self:&;
+    display: flex;
+    align-items: center;
+    gap: rem(80px);
+    margin-block-start: rem(60px);
+
+    @include mq-below($md){
+        flex-direction: column;
+        gap: rem(32px);
+        margin-block-start: rem(32px);
+    }
+
+    @include mq-between($sm, $lg){
+        @include orientation(portrait){
+            flex-direction: column;
+            gap: rem(60px);
+            margin-block-start: rem(60px);
+        }
+    }
+
+    &__media-wrap{
+        width: rem(646px);
+        height: rem(1007px);
+        border-radius: rem(24px);
+        overflow: hidden;
+
+        @include mq-below($md){
+            width: 100%;
+            height: auto;
+            border-radius: rem(18px);
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                width: 60%;
+                height: auto;
+                border-radius: rem(24px);
+            }
+        }
+    }
+
+    &__image{
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    &__info{
+        display: flex;
+        align-items: center;
+        gap: rem(26px);
+        padding-inline-end: rem(40px);
+
+        @include mq-below($md){
+            padding-inline-end: 0;
+            gap: rem(18px);
+        }
+    }
+
+    &__info-title{
+        font-size: $fs-h1-sm;
+        line-height: $lh-h1-sm;
+
+        @include mq-below($md){
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+        }
+    }
+
+    &__info-desc{
+        text-align: left;
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__info-list{
+        flex-grow: 1;
+    }
+
+    &__info-wrap{
+        width: calc(100% - rem(726px));
+
+        @include mq-below($md){
+            width: 100%;
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                width: 100%;
+            }
+        }
+    }
+
+    &__info-item{
+        height: rem(168px);
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $clr-dark;
+
+        &:first-child{
+            border-top: 1px solid $clr-dark;
+
+            @include mq-below($md){
+                border-top: none;
+                padding-block-start: 0;
+            }
+        }
+
+        @include mq-below($md){
+            height: auto;
+            padding-block: rem(24px);
+        }
+
+        &:last-child{
+            @include mq-below($md){
+                border-bottom: none;
+            }
+        }
+    }
+
+}

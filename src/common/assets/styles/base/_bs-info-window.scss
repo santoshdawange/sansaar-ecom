@@ -1,0 +1,47 @@
+//bs-info-window
+.bs-info-window{
+    $self: &;
+    max-width: rem(300px);
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px) 0;
+    padding: rem(16px);
+
+    &__item-time, &__item-address, &__item-distance, &__item-name{
+        font-size: $fs-h9;
+        line-height: $lh-h9;
+        font-weight: $font-regular;
+
+        @include mq-below($md){
+            font-size: $fs-h10;
+            line-height: $lh-h10;
+        }
+    }
+
+    &__item-name{
+        font-weight: $font-semi-bold;
+        padding-inline-end: rem(30px);
+
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__item-direction{
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
+    }
+
+    &__text{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        text-transform: capitalize;
+        font-family: $font-regular;
+    }
+
+
+
+
+}

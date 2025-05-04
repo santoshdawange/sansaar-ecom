@@ -1,0 +1,45 @@
+//bs-details
+.bs-details{
+    $self:&;
+    border: 1px solid $clr-border;
+    border-radius: rem(20px);
+    padding: rem(24px);
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-end: rem(44px);
+    }
+
+    &__title{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        text-transform: uppercase;
+    }
+
+    &__info-label{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+        margin-block-end: rem(8px);
+    }
+
+    &__info-value{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        text-transform: capitalize;
+
+        &--text-initail{
+            text-transform: initial;
+        }
+    }
+
+    .bs-form{
+        width: 100%;
+    }
+
+
+
+}

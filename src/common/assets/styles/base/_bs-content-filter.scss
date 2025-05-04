@@ -1,0 +1,383 @@
+//bs-content-filter
+.bs-content-filter{
+    $self:&;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block-end: rem(10px);
+    border-bottom: 1px solid $clr-dark;
+
+    @include mq-below($sm){
+        gap: 0 rem(8px);
+    }
+
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            gap: 0 rem(8px);
+        }
+    }
+
+    &__sort-wrap-list{
+        display: flex;
+        align-items: center;
+        justify-self: flex-end;
+        gap: rem(45px);
+
+        @include mq-below($sm){
+            gap: rem(8px);
+            width: 100%;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                gap: rem(8px);
+                width: 100%;
+            }
+        }
+    }
+
+    &__sort-wrap-list-item{
+        @include mq-below($sm){
+            width: 100%;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                width: 100%;
+            }
+        }
+    }
+
+    &__tabs-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(20px);
+        justify-self: flex-start;
+
+        // @include mq-below($sm){
+        //     display: none;
+        // }
+
+        // @include mq-between($sm, $md2){
+        //     @include orientation(portrait){
+        //         display: none;
+        //     }
+        // }
+    }
+
+
+
+    &__select{
+        display: none;
+        gap: rem(4px);
+
+        .MuiInputBase-root{
+            width: 100%;
+            border-radius: rem(12px) !important;
+
+            .MuiOutlinedInput-notchedOutline{
+                border-color: $clr-dark;
+            }
+        }
+
+        .MuiSelect-select{
+            padding-block: rem(10px);
+            text-align: left;
+        }
+
+        @include mq-below($sm){
+            display: inline-flex;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                display: inline-flex;
+            }
+        }
+    }
+
+    &__label{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        font-weight: $font-regular;
+        text-transform: capitalize;
+
+        @include mq-below($sm){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                font-size: $fs-h7;
+                line-height: $lh-h7;
+            }
+        }
+
+        
+    }
+
+    &__action-btn{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        color: $clr-dark;
+        text-transform: uppercase;
+        font-weight: $font-regular;
+        transition: all 0.3s ease;
+        min-width: rem(100px);
+        text-align: left;
+
+        @include mq-below($sm){
+            min-width: initial;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                min-width: initial;
+            }
+        }
+        
+        &:hover{
+            font-weight: $font-medium;
+        }
+
+        &--active{
+            font-weight: $font-bold;
+
+            &:hover{
+                font-weight: $font-bold;
+            }
+        }
+    }
+
+    &__search{
+        display: flex;
+        align-items: center;
+        gap: rem(4px);
+    }
+
+    &__search-label{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        font-weight: $font-regular;
+
+        @include mq-below($sm){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                font-size: $fs-h9;
+                line-height: $lh-h9;
+            }
+        }
+    }
+
+    &__input-group{
+        width: rem(570px);
+
+        @include mq-below($sm){
+            width: 100%;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                width: 100%;
+            }
+        }
+
+        .MuiFormControl-root{
+            width: 100%;
+        }
+
+        .MuiInputBase-root{
+            border-radius: rem(12px);
+            height: rem(43px);
+            width: 100%;
+
+            .MuiOutlinedInput-notchedOutline{
+                border-color: $clr-dark;
+            }
+
+            &.Mui-focused{
+                .MuiOutlinedInput-notchedOutline{
+                    border-color: $clr-dark;
+                    border-width: 1px;
+                }
+            }
+        }
+
+        .MuiInputBase-input{
+            padding-block: rem(10px);
+        }
+    }
+
+    .bs-select{
+        @include mq-below($sm){
+            gap: rem(4px);
+            align-items: flex-start;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                gap: rem(4px);
+                align-items: flex-start;
+            }
+        }
+        .MuiSelect-select{
+            @include mq-below($sm){
+                // width: 30%;
+                width: auto;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    width: auto;
+                }
+            }
+        }
+
+        &__widget{
+            @include mq-below($sm){
+                width: 100%;
+            }
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
+    &__search-wrap{
+        @include mq-below($sm){
+            width: 25%;
+            text-align: left;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                width: 25%;
+                text-align: left;
+            }
+        }
+
+        #{$self}__select{
+            @include mq-below($sm){
+                width: 100%;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__sort-wrap{
+        @include mq-below($sm){
+            width: 75%;
+            text-align: left;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                width: 75%;
+                text-align: left;
+            }
+        }
+    }
+
+    &:not(.bs-content-filter--typ-tab){
+        @include mq-below($sm){
+            // flex-direction: column;
+            // align-items: flex-start;
+            align-items: flex-end;
+            gap: rem(24px) 0;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                // flex-direction: column;
+                // align-items: flex-start;
+                align-items: flex-end;
+                gap: rem(24px) 0;
+            }
+        }
+
+        #{$self}__sort-wrap{
+            @include mq-below($sm){
+                width: 100%;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    width: 100%;
+                }
+            }
+        }
+
+        .bs-select{
+            .MuiSelect-select{
+                @include mq-below($sm){
+                    width: 100%;
+                }
+
+                @include mq-between($sm, $md2){
+                    @include orientation(portrait){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        #{$self}__search-wrap{
+            @include mq-below($sm){
+                // width: 100%;
+                width: 80%;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    // width: 100%;
+                    width: 80%;
+                }
+            }
+        }
+
+        #{$self}__search{
+            @include mq-below($sm){
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+            
+        }
+    }
+
+    &--typ-tab{
+        #{$self}__select{
+            display: none;
+            @include mq-below($sm){
+                display: inline-flex;
+            }
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    display: inline-flex;
+                }
+            }
+        }
+    }
+
+
+
+}

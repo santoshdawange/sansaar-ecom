@@ -1,0 +1,48 @@
+//bs-signup
+.bs-signup {
+    $self: &;
+    display: flex;
+    align-items: center;
+    gap: rem(12px);
+    @include mq-below($sm) {
+        flex-direction: column;
+    }
+
+    &__field {
+        width: 100%;
+        display: block;
+        border: transparent;
+        box-shadow: none;
+        outline: none;
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        height: 100%;
+        background-color: transparent;
+
+        &::placeholder {
+            color: $clr-grey;
+        }
+    }
+
+    &__form-group {
+        width: 100%;
+        max-width: rem(415px);
+        border-radius: rem(8px);
+        border: 1px solid $clr-dark;
+        padding: rem(4px) rem(8px);
+        height: rem(36px);
+        position: relative;
+        overflow: hidden;
+        padding-inline-end: rem(120px);
+
+        #{$self}__action {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            border-radius: 0;
+            padding: rem(4px) rem(20px);
+        }
+    }
+}

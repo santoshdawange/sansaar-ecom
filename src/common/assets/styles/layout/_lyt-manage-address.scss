@@ -1,0 +1,31 @@
+//lyt-manage-address
+.lyt-manage-address{
+    $self:&;
+
+    &__title-wrap{
+        margin-block-end: rem(32px);
+    }
+
+
+    &__title-text{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        text-transform: uppercase;
+    }
+
+    &__title{
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
+    }
+
+    .bs-form{
+        width: 100%;
+    }
+
+    .bs-btn__btn-solid{
+        max-width: rem(527px);
+        margin-block-start: rem(20px);
+    }
+
+}

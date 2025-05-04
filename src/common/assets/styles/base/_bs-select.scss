@@ -1,0 +1,69 @@
+//bs-select
+.bs-select{
+    $self:&;
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+
+    @include mq-below($sm){
+        flex-direction: column;
+    }
+
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            flex-direction: column;
+        }
+    }
+
+    &__widget{
+        border-radius: rem(12px) !important;
+
+        .MuiOutlinedInput-notchedOutline{
+            border-color: $clr-dark;
+        }
+    }
+
+    &__label{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        font-weight: $font-regular;
+
+        @include mq-below($sm){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                font-size: $fs-h7;
+                line-height: $lh-h7;
+            }
+        }
+
+        
+    }
+
+    .MuiSelect-select{
+        width: rem(150px);
+        padding-block: rem(10px);
+        text-align: left;
+    }
+
+    .MuiPaper-root{
+        .MuiButtonBase-root{
+            color: $clr-dark;
+            min-height: auto;
+            height: auto;
+            padding: rem(10px) rem(16px);
+    
+            &.Mui-selected, &.Mui-selected:hover{
+                background-color: $clr-light;
+            }
+        }
+    }
+
+    
+
+
+}
+

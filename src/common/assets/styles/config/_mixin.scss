@@ -1,0 +1,157 @@
+@use "sass:math";
+
+//box-shadow
+@mixin box-shadow($left, $top, $radius, $color) {
+  box-shadow: $left $top $radius $color;
+  -webkit-box-shadow: $left $top $radius $color;
+  -moz-box-shadow: $left $top $radius $color;
+}
+
+//transition
+@mixin transition($property, $duration, $easing: linear) {
+  transition: $property $duration $easing;
+  -webkit-transition: $property $duration $easing;
+  -moz-transition: $property $duration $easing;
+}
+
+//border-radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+/*asif*/
+@mixin opacity($value) {
+  $IEValue: $value * 100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $IEValue + ")";
+  filter: alpha(opacity=$IEValue);
+}
+/*asif end*/
+//input-placeholder
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin mq-below($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin mq-between($lower, $upper) {
+  @media only screen and (min-width: $lower) and (max-width: $upper) {
+    @content;
+  }
+}
+@mixin mq-above($breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin orientation($direction) {
+  $orientation-landscape: "(orientation:landscape)";
+  $orientation-portrait: "(orientation:portrait)";
+  @if $direction ==landscape {
+    @media #{$orientation-landscape} {
+      @content;
+    }
+  }
+  @if $direction ==portrait {
+    @media #{$orientation-portrait} {
+      @content;
+    }
+  }
+}
+
+$html-font-size: 16px;
+
+@function stripUnit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+@function rem($pxValue) {
+  $value: math.div(stripUnit($pxValue), stripUnit($html-font-size));
+  @return #{$value}rem;
+}
+
+@function opaqueColor($clrValue, $opacity){
+  $value: rgba($clrValue, $opacity);
+  @return $value;
+}
+// @function stripUnit($value) {
+//   @return $value / ($value * 0 + 1);
+// }
+// @function rem($pxValue) {
+//   $value: stripUnit($pxValue) / stripUnit($html-font-size);
+//   @return #{$value}rem;
+// }
+
+@mixin svg-icon($path, $height, $width) {
+  height: $height;
+  width: $width;
+  mask-image: url($path);
+  -webkit-mask-image: url($path);
+  background-size: cover;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+@mixin background-opacity($color, $opacity) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    cursor: grab;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    cursor: grab;
+    border-radius: rem(5px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    cursor: grab;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin lineclamp($count){
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}

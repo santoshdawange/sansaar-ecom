@@ -1,0 +1,38 @@
+//bs-social
+.bs-social{
+    display: flex;
+    align-items: center;
+    gap: rem(12px);
+
+    .icon{
+        transition: all 0.3s ease;
+    }
+
+    &__link-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(20px);
+    }
+
+    &__link{
+        &:hover{
+            .icon{
+                &.icon-facebook{
+                    background-color: #1877f2;
+                }
+                &.icon-youtube{
+                    background-color: #ff0000;
+                }
+                &.icon-instagram{
+                    background-color: #c13584;
+                }
+                &.icon-linkedin{
+                    background-color: #0a66c2;
+                }
+            }
+        }
+    }
+
+
+
+}

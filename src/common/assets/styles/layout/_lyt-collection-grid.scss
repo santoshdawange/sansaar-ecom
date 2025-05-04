@@ -1,0 +1,27 @@
+//lyt-collection-grid
+.lyt-collection-grid{
+    $self: &;
+
+    &__wrap{
+        display: flex;
+        flex-flow: row wrap;
+        gap: rem(48px) 0;
+        margin: 0 rem(-24px);
+    }
+
+    &__item{
+        height: rem(560px);
+        width: 33.33%;
+        padding: 0 rem(24px);
+
+        &:first-child{
+            width: 55%;
+        }
+
+        &:nth-child(2){
+            width: 45%;
+        }
+    }
+
+
+}

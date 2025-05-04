@@ -1,0 +1,67 @@
+//mod-checkbox
+.mod-checkbox{
+    $self: &;
+    &__input {
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+        &:checked + label:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: rem(4px);
+            left: rem(15px);
+            width: rem(9px);
+            height: rem(18px);
+            border: solid $clr-white;
+            border-width: 0 rem(4px) rem(4px) 0;
+            transform: rotate(45deg);
+            @include mq-below($sm){
+                width: rem(6px);
+                height: rem(12px);
+                border-width: 0 rem(2px) rem(2px) 0;
+                top: rem(5px);
+                left: rem(9px);
+            }
+        }
+        &:checked + label:before {
+            background: $clr-dark;
+        }
+    }
+    &__label {
+        position: relative;
+        cursor: pointer;
+        font-family: $font1;
+        font-size: $fs-h5;
+        line-height: normal;
+        color: $clr-dark;
+        text-align: left;
+        width: rem(40px);
+        height: rem(40px);
+        @include mq-below($sm) {
+            font-size: $fs-h7;
+        }
+        &::before {
+            content: "";
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 1px solid $clr-dark;
+            width: rem(40px);
+            height: rem(40px);
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            border-radius: rem(8px);
+            @include mq-below($sm) {
+                width: rem(24px);
+                height: rem(24px);
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,55 @@
+//lyt-product
+.lyt-product{
+    $self: &;
+
+    &__list-wrap{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: rem(60px);
+        padding-block: rem(60px);
+
+        @include mq-below($md){
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(16px);
+        }
+
+        @include mq-between($sm, $md2){
+            // @include orientation(portrait){
+                grid-template-columns: repeat(4, 1fr);
+            // }
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    }
+
+    &__list-item{
+        display: flex;
+        justify-content: space-between;
+        @include mq-below($md){
+            justify-content: center;
+        }
+
+        .mod-product{
+            @include mq-below($md){
+                width: 100%;
+            }
+        }
+    }
+
+    &__title-wrap{
+        padding-block-end: rem(10px);
+        border-bottom: 1px solid $clr-dark;
+        text-align: left;
+    }
+
+    &__title{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        text-transform: capitalize;
+    }
+
+}

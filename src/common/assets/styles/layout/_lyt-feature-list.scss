@@ -1,0 +1,7 @@
+//lyt-feature-list
+.lyt-feature-list{
+    $self:&;
+    display: flex;
+    align-items: flex-start;
+    gap: rem(100px);
+}

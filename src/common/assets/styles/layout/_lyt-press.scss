@@ -1,0 +1,50 @@
+//lyt-press
+.lyt-press{
+    $self:&;
+
+    &__list-wrap{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(46px);
+
+        @include mq-below($sm){
+            grid-template-columns: repeat(1, 1fr);
+            gap: rem(16px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                grid-template-columns: repeat(2, 1fr);
+                gap: rem(16px);
+            }
+        }
+    }
+
+    &--typ-full{
+        #{$self}__list-wrap{
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0;
+        }
+
+        #{$self}__list-item{
+            border-bottom: 1px solid $clr-dark;
+
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+    }
+
+    .bs-info-tile{
+        &__desc{
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+
+}

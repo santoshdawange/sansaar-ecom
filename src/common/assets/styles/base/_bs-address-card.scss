@@ -1,0 +1,114 @@
+//bs-address-card
+.bs-address-card{
+    $self:&;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: rem(24px);
+    border: 1px solid $clr-pallet-5;
+    border-radius: rem(12px);
+    padding-inline-start: rem(72px);
+    position: relative;
+
+    &__title{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        font-weight: $font-semi-bold;
+        text-transform: capitalize;
+        color: $clr-dark;
+    }
+
+    &__title-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
+        margin-block-end: rem(12px);
+    }
+
+    &__address-text{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        color: $clr-dark;
+    }
+
+    &__cont-wrap{
+        max-width: rem(600px);
+    }
+
+    &__action-list{
+        display: flex;
+        align-items: center;
+        gap: rem(40px);   
+    }
+
+    &__action-item{
+        position: relative;
+
+        &:after{
+            content: '';
+            position: absolute;
+            right: rem(-25px);
+            background-color: $clr-border;
+            width: rem(1px);
+            top: 0;
+            bottom: 0;
+        }
+
+        &:last-child{
+            &:after{
+                display: none;
+            }
+        }
+    }
+
+    &__radio-wrap{
+        position: absolute;
+        left: rem(20px);
+        top: rem(24px);
+    }
+
+    &__radio{
+        input{
+            padding: 0;
+            height: initial;
+            width: initial;
+            margin-bottom: 0;
+            display: none;
+            cursor: pointer;
+            &:checked + label {
+                @include svg-icon("../../images/icons/filled-radio.svg", rem(32px), rem(32px));
+            }
+        }
+
+        &__label{
+            @include svg-icon("../../images/icons/blank-radio.svg", rem(32px), rem(32px));
+            @include background-opacity($clr-dark, 1);   
+            transition: all 0.3s ease;
+            display: inline-flex;
+            cursor: pointer;
+        }
+    }
+
+    &__action-wrap{
+        display: flex;
+        flex-direction: column;
+        gap: rem(54px);
+        align-items: flex-end;
+    }
+
+    &--typ-sm{
+        display: inline-flex;
+        #{$self}__action-wrap{
+            display: none;
+        }
+    }
+
+    &--typ-no-radio{
+        padding-inline-start: rem(24px);
+        #{$self}__radio-wrap{
+            display: none;
+        }
+    }
+
+
+}

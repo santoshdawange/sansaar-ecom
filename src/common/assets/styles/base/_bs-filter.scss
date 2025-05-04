@@ -1,0 +1,186 @@
+.bs-filter {
+    $self:&;
+    padding: rem(37px) rem(37px) rem(16px);
+    border-radius: rem(12px);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(30px);
+
+    @include mq-below($md){
+        border-radius: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: rem(74px);
+        transition: all 0.3s ease;
+        transform: translateX(150%);
+        z-index: 9;
+        padding: rem(30px) rem(20px);
+        height: calc(100vh - rem(74px));
+    }
+
+    @include mq-between($sm2, $md2){
+        @include orientation(portrait){
+            top: rem(120px);
+            height: calc(100vh - rem(120px));
+        }
+    }
+
+    @include mq-between($md2, $lg){
+        @include orientation(portrait){
+            border-radius: 0;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: rem(80px);
+            transition: all 0.3s ease;
+            transform: translateX(150%);
+            z-index: 9;
+            padding: rem(60px) rem(50px);
+            height: calc(100vh - rem(80px));
+            justify-content: flex-start;
+        }
+
+    }
+
+    &__mb-active{
+        @include mq-below($md){
+            transform: translateX(0);
+        }
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__title-wrap {
+        flex-shrink: 0;
+    }
+    &__top-wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-block-start: rem(14px);
+        align-items: flex-start;
+        gap: rem(12px);
+        .bs-btn {
+            flex-shrink: 0;
+        }
+        .bs-btn__btn-text {
+            text-transform: unset;
+            font-weight: $font-semi-bold;
+            font-size: $fs-h10;
+            line-height: normal;
+        }
+    }
+    &__body-wrap {
+        flex-grow: 1;
+        max-height: rem(600px);
+        overflow-y: auto;
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                max-height: rem(700px);
+            }
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                max-height: initial;
+            }
+        }
+    }
+    &__bottom-wrap {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        padding-block-start: rem(14px);
+        border-top: 1px solid $clr-dark;
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                margin-top: auto;
+            }
+        }
+    }
+    &__tag-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(9px);
+    }
+    &__label {
+        display: flex;
+        align-items: center;
+        gap: rem(30px);
+        font-size: $fs-h8;
+        line-height: normal;
+        font-weight: $font-thin;
+        cursor: pointer;
+        color: $clr-dark;
+    }
+    &__list{
+        border-bottom: 1px solid $clr-grey;
+
+        // &:last-child{
+        //     border-bottom: none;
+        // }
+    }
+    &__item {
+        margin-block-end: 0;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        
+        .icon {
+            &.icon-down {
+                width: rem(24px);
+                height: rem(24px);
+            }
+        }
+
+        .MuiButtonBase-root{
+            padding-block: rem(16px) !important;
+        }
+    }
+    .MuiAccordionSummary-content {
+        margin: 0;
+    }
+    .MuiAccordionSummary-root {
+        min-height: auto;
+        padding: 0;
+        justify-content: flex-start;
+        gap: rem(30px);
+        &.Mui-expanded {
+            min-height: auto !important;
+        }
+    }
+    .MuiAccordionSummary-content {
+        flex-grow: unset;
+        margin: 0 !important;
+    }
+    .MuiAccordionDetails-root {
+        padding: rem(20px) 0;
+        text-align: left;
+    }
+    .MuiAccordionSummary-expandIconWrapper{
+        margin-left: auto;
+    }
+
+    &__title-cont{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-end: rem(30px);
+    }
+
+    &__close{
+
+        #{$self}__icon{
+            width: rem(20px);
+            height: rem(20px);
+        }
+
+    }
+
+}

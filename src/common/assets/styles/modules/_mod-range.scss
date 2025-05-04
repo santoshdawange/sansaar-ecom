@@ -1,0 +1,110 @@
+.mod-range {
+    position: relative;
+    padding-inline: rem(25px);
+
+    .MuiSlider-root{
+        color: $clr-dark !important;
+    }
+
+    .MuiSlider-markLabel{
+        font-size: $fs-h9 !important;
+        line-height: normal !important;
+        color: $clr-dark !important;
+
+        &[data-index="1"]{
+            left: 98% !important;
+        }
+    }
+
+    .MuiSlider-thumb{
+        &:hover{
+            box-shadow: 0px 0px 0px 8px rgba(81, 49, 23, 0.16);
+        }
+    }
+
+    &__form-group {
+        position: relative;
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: rem(11px);
+            width: rem(10px);
+            height: rem(10px);
+            border-radius: 50%;
+            background: $clr-dark;
+            display: block;
+        }
+        &::after {
+            right: 0;
+            left: auto;
+        }
+    }
+    &__min-range,
+    &__max-range {
+        font-size: $fs-h9;
+        line-height: normal;
+        color: $clr-dark;
+    }
+    &__price-wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__tooltip {
+        position: absolute;
+        top: rem(-15px);
+        left: 0;
+        color: $clr-dark;
+        border-radius: rem(4px);
+        font-size: $fs-h9;
+        text-align: center;
+        white-space: nowrap;
+        z-index: 1;
+    }
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: rem(4px);
+        background: $clr-dark;
+    }
+
+    input[type="range"]:focus {
+        outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: rem(14px);
+        -webkit-appearance: none;
+        height: rem(14px);
+        cursor: ew-resize;
+        background: $clr-dark;
+        border-radius: 50%;
+        position: relative;
+        z-index: 5;
+        cursor: grab;
+    }
+    input[type="range"]::-moz-range-progress {
+        background-color: $clr-dark;
+    }
+    input[type="range"]::-moz-range-track {
+        background-color: $clr-dark;
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: rem(14px);
+        height: rem(14px);
+        cursor: ew-resize;
+        background: $clr-dark;
+        border-radius: 50%;
+    }
+    input[type="range"]::-ms-track {
+        background-color: $clr-dark;
+    }
+    input[type="range"]::-ms-thumb {
+        width: rem(14px);
+        height: rem(14px);
+        cursor: ew-resize;
+        background: $clr-dark;
+        border-radius: 50%;
+    }
+}

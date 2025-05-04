@@ -1,0 +1,68 @@
+//bs-radio
+.bs-radio{
+    $self: &;
+
+    input{
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+        &:checked + label{
+            border-color: $clr-dark;
+            font-weight: $font-semi-bold;
+        }
+    }
+
+    &__label{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        padding: rem(8px) rem(12px);
+        border-radius: rem(8px);
+        border: 1px solid $clr-light-6;
+        cursor: pointer;
+        display: inline-block;
+
+        &:hover{
+            border-color: $clr-dark;
+        }
+    }
+
+    &--typ-color{
+        #{$self}__label{
+            width: rem(40px);
+            height: rem(40px);
+            padding: 0;
+            border-color: transparent;
+            border-width: rem(2px);
+            border-radius: 0;
+        }
+    }
+
+    &--typ-capsule{
+        #{$self}__label{
+            font-size: $fs-h6;
+            line-height: $lh-h6;
+            color: $clr-dark;
+            font-weight: $font-semi-bold;
+            text-transform: uppercase;
+            padding: rem(12px) rem(20px);
+            border-radius: rem(40px);
+            border-color: $clr-dark;
+        }
+
+        input{
+            &:checked + label{
+                color: $clr-white;
+                background-color: $clr-dark !important;
+            }
+        }
+    }
+
+
+
+
+}

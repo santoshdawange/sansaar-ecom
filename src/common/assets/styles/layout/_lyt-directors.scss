@@ -1,0 +1,56 @@
+//lyt-directors
+.lyt-directors {
+    display: flex;
+    align-items: center;
+    gap: rem(160px);
+    justify-content: space-between;
+    @include mq-below($sm) {
+        flex-direction: column;
+        gap: rem(48px);
+    }
+    @include mq-between($sm2, $lg){
+        @include orientation(portrait){
+            flex-direction: column;
+        }
+    }
+
+    &__title-wrap {
+        width: rem(378px);
+        text-align: left;
+        margin-block-end: 0;
+        @include mq-below($sm) {
+            width: 100%;
+            text-align: center;
+        }
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                text-align: center;
+            }
+        }
+    }
+
+    &__list-wrap {
+        display: flex;
+        align-items: center;
+        gap: rem(100px);
+        justify-content: space-between;
+        @include mq-below($sm) {
+            flex-direction: column;
+            gap: rem(24px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    &__title {
+        margin-block-end: rem(24px) !important;
+    }
+
+    &__cont-wrap {
+        flex-grow: 1;
+    }
+}

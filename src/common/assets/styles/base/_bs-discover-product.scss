@@ -1,0 +1,115 @@
+//bs-discover-product
+.bs-discover-product {
+    $self: &;
+    position: relative;
+
+    &:hover {
+        #{$self}__image {
+            transform: scale(1.05);
+        }
+    }
+
+    &:before {
+        content: "";
+        width: 100%;
+        border-radius: rem(16px);
+        z-index: -1;
+        background-color: $clr-light;
+        position: absolute;
+        left: rem(-60px);
+        top: rem(-20px);
+        bottom: rem(60px);
+        @include mq-below($sm) {
+            left: rem(-16px);
+            top: rem(-12px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                left: rem(-8px);
+                top: rem(-6px);
+            }
+        }
+    }
+
+    &__image {
+        transform: scale(1);
+        transition: all 0.3s ease;
+    }
+
+    &__title {
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        font-family: $font2;
+        font-style: italic;
+        text-transform: uppercase;
+        margin-block-end: rem(8px);
+        @include mq-below($sm) {
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                font-size: $fs-h7;
+                line-height: $lh-h7;
+            }
+        }
+    }
+
+    &__info-wrap {
+        width: rem(408px);
+        height: rem(585px);
+        position: relative;
+        @include mq-below($sm) {
+            width: 100%;
+            height: rem(460px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                height: rem(300px);
+            }
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                width: rem(330px);
+                height: rem(430px);
+            }
+        }
+
+        #{$self}__media-wrap {
+            width: 100%;
+            height: 100%;
+            border-radius: rem(16px);
+            overflow: hidden;
+        }
+
+        #{$self}__action {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: rem(-24px);
+
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    width: 80%;
+                    padding-inline: rem(16px);
+                }
+            }
+        }
+    }
+
+    &__media-wrap{
+        position: relative;
+
+        #{$self}__media-link{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            text-indent: -9999px;
+        }
+    }
+}

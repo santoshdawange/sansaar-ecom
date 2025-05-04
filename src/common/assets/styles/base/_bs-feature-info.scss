@@ -1,0 +1,48 @@
+//bs-feature-info
+.bs-feature-info{
+    $self:&;
+
+    &__feature-desc{
+        font-size: $fs-h7;
+        line-height: $lh-h3;
+
+        @include mq-below($sm){
+            font-size: $fs-h9;
+            line-height: $lh-h6;
+        }
+        
+    }
+
+    &__image{
+        margin-block-end: rem(20px);
+    }
+
+    &__media-wrap{
+        margin-block-end: rem(40px);
+        @include mq-below($sm){
+            margin-block-end: rem(20px);
+        }
+    }
+
+    &__feature-title{
+        font-size: $fs-h7;
+        line-height: $lh-h3;
+        font-weight: $font-bold;
+
+        @include mq-below($sm){
+            font-size: $fs-h9;
+            line-height: $lh-h6;
+        }
+    }
+
+    &__feature-list{
+        display: flex;
+        flex-direction: column;
+        gap: rem(40px);
+
+        @include mq-below($sm){
+            gap: rem(20px);
+        }
+    }
+
+}

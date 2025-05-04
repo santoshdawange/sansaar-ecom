@@ -1,0 +1,40 @@
+//mod-product-tag
+.mod-product-tag{
+    font-size: $fs-h8;
+    line-height: $lh-h8;
+    text-transform: uppercase;
+    font-weight: $font-semi-bold;
+    color: $clr-light-3;
+    padding: rem(8px) rem(16px);
+    border-radius: rem(20px);
+
+    &--new{
+        background-color: $clr-pallet-2;
+    }
+
+    &--new-2{
+        background-color: $clr-pallet-3;
+    }
+
+    &--sale{
+        background-color: $clr-pallet-1;
+    }
+
+    &--outline{
+        color: $clr-dark;
+        border: 1px solid $clr-dark;
+
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+            padding: rem(6px) rem(10px);
+        }
+    }
+
+    &--typ-border{
+        border: 1px solid $clr-grey-3;
+        color: $clr-grey-3;
+    }
+
+
+}

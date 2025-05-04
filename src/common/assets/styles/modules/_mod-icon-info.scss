@@ -1,0 +1,38 @@
+.mod-icon-info {
+    display: flex;
+    align-items: center;
+    gap: rem(12px);
+
+    @include mq-between($sm2, $lg){
+        @include orientation(portrait){
+            justify-content: center;
+        }
+    }
+    
+    &__icon-wrap {
+        width: rem(80px);
+        flex-shrink: 0;
+        @include mq-below($sm) {
+            width: rem(44px);
+            height: rem(44px);
+        }
+        .icon {
+            @include mq-below($sm) {
+                width: rem(44px);
+                height: rem(44px);
+            }
+        }
+    }
+    &__desc {
+        text-align: left;
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        font-weight: $font-regular;
+        @include mq-below($sm) {
+            font-size: $fs-h10;
+        }
+    }
+    &__highlight {
+        font-size: $fs-h6;
+    }
+}

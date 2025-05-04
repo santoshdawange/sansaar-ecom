@@ -1,0 +1,39 @@
+//mod-product-set
+.mod-product-set{
+    $self: &;
+
+    &__img-wrap{
+        width: 100%;
+        height: rem(350px);
+        border-radius: rem(22px);
+        overflow: hidden;
+    }
+
+    &__image{
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__info-wrap{
+        padding-block-start: rem(12px);
+    }
+
+    &__title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        font-weight: $font-semi-bold;
+        text-transform: uppercase;
+        max-width: 80%;
+        margin-block-end: rem(8px);
+    }
+
+    &__price{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        margin-block-end: rem(12px);
+    }
+
+
+
+}

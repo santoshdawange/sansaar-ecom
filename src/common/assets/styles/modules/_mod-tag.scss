@@ -1,0 +1,16 @@
+.mod-tag {
+    border: 1px solid $clr-dark;
+    border-radius: rem(4px);
+    padding: rem(2px) rem(5px);
+    display: flex;
+    align-items: center;
+    gap: rem(4.5px);
+    &__text {
+        font-size: $fs-h10;
+        line-height: normal;
+        color: $clr-dark;
+    }
+    .icon {
+        cursor: pointer;
+    }
+}

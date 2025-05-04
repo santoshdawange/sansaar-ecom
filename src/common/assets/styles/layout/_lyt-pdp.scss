@@ -1,0 +1,22 @@
+//lyt-pdp
+
+.lyt-pdp{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-block-end: rem(40px);
+
+    &__media-wrap{
+        position: sticky;
+        top: rem(155px);
+        height: calc(100vh - rem(155px)); 
+        padding: rem(60px) rem(45px) rem(45px) rem(45px);
+        align-self: flex-start;
+        max-width: 60%;
+    }
+
+    &__info-wrap{
+        flex-grow: 1; 
+        padding: rem(60px) rem(100px) rem(45px) rem(45px);
+    }
+}

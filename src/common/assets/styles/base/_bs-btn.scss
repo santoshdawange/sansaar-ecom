@@ -1,0 +1,214 @@
+//bs-btn
+.bs-btn {
+    $self:&;
+    width: max-content;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &__btn-solid {
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+        color: $clr-white;
+        text-align: center;
+        padding: rem(12px) rem(40px);
+        border-radius: rem(14px);
+        background-color: $clr-dark;
+        @include mq-below($sm) {
+            font-size: $fs-h8;
+            line-height: $lh-h8;
+            padding: rem(12px) rem(24px);
+        }
+
+        &:hover {
+            background-color: $clr-dark-1;
+        }
+
+        &--inverse {
+            color: $clr-dark;
+            background-color: $clr-white;
+
+            &:hover {
+                background-color: $clr-white-1;
+            }
+        }
+
+        &--typ-large{
+            padding: rem(20px) rem(64px);
+        }
+
+        &--typ-xxl{
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+            padding: rem(28px);
+            // padding: rem(16px) rem(28px);
+            border-radius: rem(20px);
+            width: 100%;
+        }
+
+        &--inverse-border{
+            color: $clr-dark !important;
+            background-color: $clr-white;
+            border: rem(2px) solid $clr-dark;
+
+            &:hover{
+                color: $clr-white !important;
+            }
+        }
+    }
+
+    &__btn-icon-link{
+        display: flex;
+        align-items: center;
+        gap: rem(6px);
+
+        #{$self}__icon{
+            width: rem(30px);
+            height: rem(30px);
+        }
+
+        #{$self}__btn-text{
+            font-size: $fs-h7;
+            line-height: $lh-h7;
+            text-transform: uppercase;
+            font-weight: $font-bold;
+            color: $clr-dark;
+        }
+
+        &--decoration-underline{
+            #{$self}__btn-text{
+                text-decoration: underline;
+            }
+        }
+
+        &--clr-dark{
+            #{$self}__btn-text{
+                color: $clr-dark;
+            }
+
+            #{$self}__icon{
+                &.icon{
+                    background-color: $clr-dark;
+                }
+            }
+        }
+    }
+
+    &__btn-icon-solid{
+        background-color: $clr-white;
+        border-radius: rem(8px);
+        padding: rem(8px) rem(24px);
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
+        border: 1px solid $clr-white;
+        transition: all 0.3s ease;
+
+        #{$self}__btn-text{
+            font-size: $fs-h7;
+            line-height: $lh-h7;
+            text-transform: capitalize;
+        }
+
+        &:hover{
+            background-color: $clr-white;
+            border-color: $clr-dark;
+        }
+
+        &--typ-xxl{
+            justify-content: center;
+            padding: rem(28px);
+            // padding: rem(16px) rem(28px);
+            border-radius: rem(20px);
+            width: 100%;
+            border-width: rem(2px);
+            #{$self}__btn-text{
+                font-size: $fs-h5;
+                line-height: $lh-h5;
+                text-transform: uppercase;
+                font-weight: $font-bold;
+            }
+
+
+        }
+    }
+
+    &__btn-icon-text{
+        #{$self}__btn-text{
+            font-size: $fs-h6;
+            line-height: $lh-h6;
+            text-transform: uppercase;
+            font-weight: $font-semi-bold;
+        }
+    }
+
+    &__btn-border{
+        display: flex;
+        align-items: center;
+        gap: rem(4px);
+        border: 1px solid $clr-black;
+        padding: rem(12px) rem(20px);
+        border-radius: rem(100px);
+        transition: all 0.3s ease;
+
+
+        #{$self}__btn-text{
+            text-transform: uppercase;
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+            font-weight: $font-regular;
+            color: $clr-black;
+            transition: all 0.3s ease;
+        }
+
+        #{$self}__icon{
+            transition: all 0.3s ease;
+            &.icon-google{
+                width: rem(48px);
+                height: rem(48px);
+                background: url('../../images/google.png') no-repeat 0 0 transparent;
+                background-size: cover;
+            }
+        }
+
+        &:hover{
+            background-color: $clr-black;
+            border-color: $clr-black;
+            #{$self}__btn-text{
+                color: $clr-white;
+            }
+        }
+
+        &--typ-rounded-box{
+            padding: rem(28px);
+            border-color: $clr-dark;
+            border-radius: rem(20px);
+            border-width: rem(2px);
+
+            #{$self}__icon{
+                background-color: $clr-dark !important;
+            }
+
+            #{$self}__btn-text{
+                color: $clr-dark;
+                font-weight: $font-bold;
+            }
+
+            &:hover{
+                background-color: $clr-dark;
+
+                #{$self}__icon{
+                    background-color: $clr-white !important;
+                }
+
+                #{$self}__btn-text{
+                    color: $clr-white;
+                }
+            }
+        }
+    }
+
+    
+}

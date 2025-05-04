@@ -1,0 +1,32 @@
+//mod-marquee
+.mod-marquee{
+    padding-block: rem(60px);
+
+    &__label{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        color: $clr-pallet-4;
+        text-transform: capitalize;
+    }
+
+    &__item, .rfm-initial-child-container, .rfm-marquee, &.rfm-marquee-container{
+        display: flex;
+        align-items: center;
+        gap: 0 rem(24px);
+    }
+
+    &__seperator{
+        width: rem(10px);
+        height: rem(10px);
+        background-color: $clr-dark-3;
+        border-radius: 100%;
+    }
+
+
+
+    
+
+
+
+
+}

@@ -1,0 +1,20 @@
+//lyt-blogs
+.lyt-blogs{
+
+    .bs-section-banner{
+        &__info-wrap{
+            max-width: rem(550px);
+        }
+
+        &__title--highlight{
+            line-height: 0.9;
+            margin-block-start: rem(10px);
+        }
+    }
+
+    .bs-info-tile--typ-press .bs-info-tile__image-wrap{
+        height: rem(340px);
+    }
+
+
+}

@@ -1,0 +1,71 @@
+//bs-custom-tab-content
+.bs-custom-tab-content{
+    $self: &;
+    padding-block: rem(75px);
+
+    @include mq-below($md){
+        padding-block: rem(24px);
+        // padding-block-end: rem(32px);
+        // padding-block-end: 0;
+    }
+
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            padding-block: rem(60px);
+            padding-block-end: rem(64px);
+        }
+    }
+
+    &__title{
+        font-size: $fs-h1-sm;
+        line-height: $lh-h1-sm;
+        text-transform: uppercase;
+
+        @include mq-below($md){
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+            max-width: initial;
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                font-size: $fs-h3;
+                line-height: $lh-h3;
+                max-width: initial;
+            }
+        }
+    }
+
+    .bs-content-filter{
+        margin-block-start: rem(64px);
+
+        @include mq-below($sm){
+            margin-block-start: rem(24px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                margin-block-start: rem(56px);
+            }
+        }
+    }
+
+    &__tab-cont{
+        padding-block-start: rem(80px);
+
+        @include mq-below($sm){
+            padding-block-start: rem(32px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                padding-block-start: rem(64px);
+            }
+        }
+    }
+
+
+
+
+
+}

@@ -1,0 +1,221 @@
+//bs-header
+.bs-header {
+    $self: &;
+    padding: rem(32px) rem(96px);
+    background-color: $clr-white;
+    max-height: rem(156px);
+    display: flex;
+    gap: rem(40px);
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1201;
+    -webkit-box-shadow: 0px 2px 54px -12px rgba(212, 206, 201, 1);
+    -moz-box-shadow: 0px 2px 54px -12px rgba(212, 206, 201, 1);
+    box-shadow: 0px 2px 54px -12px rgba(212, 206, 201, 1);
+
+    @include mq-below($sm) {
+        padding: rem(10px) rem(16px);
+        width: 100%;
+    }
+
+    @include mq-below($md) {
+        padding: rem(8px) rem(20px);
+        height: rem(74px);
+    }
+
+    @include mq-between($sm2, $md2){
+        @include orientation(portrait){
+            padding: rem(30px) rem(40px);
+            height: rem(120px);
+        }
+    }
+
+    @include mq-between($sm2, $lg){
+        @include orientation(portrait){
+            height: rem(80px);
+        }
+    }
+
+    &__logo {
+        width: rem(285px);
+        display: inline-block;
+
+        @include mq-below($md) {
+            width: rem(120px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                width: rem(130px);
+            }
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                width: rem(130px);
+            }
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__menu-action {
+        display: none;
+        flex-direction: column;
+        gap: rem(9px);
+
+        @include mq-below($md) {
+            display: inline-flex;
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                display: inline-flex;
+            }
+        }
+
+        &--active {
+            #{$self}__menu-bar {
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:first-child {
+                    position: relative;
+                    transform: rotate(45deg) translateY(rem(8px));
+                }
+
+                &:last-child {
+                    position: relative;
+                    transform: rotate(-45deg) translateY(rem(-8px));
+                }
+            }
+        }
+    }
+
+    &__menu-bar {
+        width: rem(24px);
+        height: rem(2px);
+        background-color: $clr-dark;
+        transition: all 0.3s ease;
+    }
+
+    &__menu-wrap {
+        // margin-left: auto;
+        @include mq-below($md) {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: rem(74px);
+            bottom: 0;
+            z-index: 9;
+            background-color: $clr-white;
+            transform: translateX(100%);
+            transition: all 0.5s ease;
+            margin-left: initial;
+        }
+
+        // @include mq-between($sm, $md2){
+        //     @include orientation(portrait){
+        //         flex-direction: row;
+        //     }
+        // }
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: rem(74px);
+                bottom: 0;
+                z-index: 9;
+                background-color: $clr-white;
+                transform: translateX(100%);
+                transition: all 0.5s ease;
+                margin-left: initial;
+            }
+        }
+
+        &--active {
+            @include mq-below($md) {
+                transform: translateX(0);
+            }
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+
+    &__sub-menu-wrap {
+        display: flex;
+        // display: none;
+        justify-content: flex-end;
+        width: rem(180px);
+        gap: rem(30px);
+
+        @include mq-below($md) {
+            width: auto;
+            align-items: center;    
+            gap: rem(16px);
+            justify-content: initial;
+            display: flex;
+        }
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                display: flex;
+                width: auto;
+                align-items: center;    
+                gap: rem(32px);
+                justify-content: initial;
+            }
+        }
+        
+    }
+
+    &__action {
+        width: rem(34px);
+        height: rem(34px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: rem(4px);
+
+
+        @include mq-below($md) {
+            width: rem(30px) !important;
+            height: rem(30px);
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                width: rem(24px);
+                height: rem(24px);
+            }
+        }
+
+        .icon{
+            &.icon-cart{
+                @include mq-below($md) {
+                    width: 100% !important;
+                    height: 100%;
+                }
+            }
+
+            &.icon-search{
+                @include mq-below($md) {
+                    width: rem(24px) !important;
+                    height: rem(24px);
+                }
+            }
+        }
+    }
+}

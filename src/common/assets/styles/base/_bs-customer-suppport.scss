@@ -1,0 +1,45 @@
+//bs-customer-suppport
+.bs-customer-suppport{
+    $self: &;
+    padding-block: rem(30px);
+
+    &__info-wrap{
+        display: flex;
+        align-items: center;
+        margin-inline: rem(-30px);
+    }
+
+    &__info-item{
+        min-width: rem(300px);
+        padding-inline: rem(30px);
+        border-right: 1px solid $clr-grey;
+
+        &:last-child{
+            border-right: none;
+        }
+    }
+
+    &__title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        color: $clr-dark;
+        font-weight: $font-medium;
+        margin-block-end: rem(10px);
+    }
+
+    &__item{
+        display: flex;
+        gap: rem(20px);
+        align-items: center;
+    }
+
+    &__info-wrap{
+        justify-content: center;
+    }
+
+    &__innfo-wrap{
+        text-align: left;
+    }
+
+}

@@ -1,0 +1,155 @@
+//bs-info-tile
+.bs-info-tile{
+    $self:&;
+    max-height: rem(656px);
+    height: 100%;
+    border-radius: rem(20px);
+    border: 1px solid $clr-dark;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s ease;
+
+    @include mq-below($sm){
+        max-height: rem(500px);
+    }
+
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            max-height: rem(575px);
+        }
+    }
+
+    &__link{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        text-indent: -9999px;
+
+        &:hover{
+            + #{$self}__image-wrap{
+                #{$self}__image{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    &__image-wrap{
+        width: 100%;
+        height: rem(315px);
+        overflow: hidden;
+
+        @include mq-below($sm){
+            height: rem(200px);
+        }
+    }
+
+    &__image{
+        transition: all 1s ease;
+    }
+
+    &__info-wrap{
+        padding-inline: rem(24px);
+        padding-block: rem(32px);
+        text-align: left;
+    }
+
+    &__title{
+        font-weight: $font-bold;
+        font-size: $fs-h4;
+        line-height: $lh-h4;
+        text-decoration: underline;
+        margin-block-end: rem(18px);
+
+        @include mq-below($sm){
+            font-size: $fs-h7;
+            line-height: $lh-h7;
+        }
+    }
+
+    &__sub-title{
+        font-size: $fs-h4;
+        line-height: $lh-h4;
+        font-weight: $font-medium;
+        margin-block-end: rem(10px);
+
+        @include mq-below($sm){
+            font-size: $fs-h6;
+            line-height: $lh-h6;
+        }
+    }
+
+    &__time, &__desc{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        font-weight: $font-regular;
+
+        @include mq-below($sm){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__time{
+        margin-block-end: rem(24px);
+        display: block;
+    }
+
+    &__desc{
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                @include lineclamp(4);
+            }
+        }
+        
+    }
+
+
+    &--typ-article{
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+
+        #{$self}__info-wrap{
+            padding-inline: rem(6px);
+            padding-block: rem(24px);
+        }
+
+        #{$self}__title{
+            text-decoration: none;
+            font-weight: $font-medium;
+        }
+
+        #{$self}__sub-title{
+            font-weight: $font-bold;
+            margin-block-end: rem(10px);
+            display: block;
+        }
+
+        &:hover{
+            background-color: $clr-light;
+        }
+    }
+
+    &--typ-press{
+        max-height: rem(750px);
+        #{$self}__image-wrap{
+            height: rem(425px);
+
+            @include mq-below($sm){
+                height: rem(250px);
+            }
+        }
+    }
+
+
+
+
+}

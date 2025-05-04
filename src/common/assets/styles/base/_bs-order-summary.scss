@@ -1,0 +1,49 @@
+//bs-order-summary
+.bs-order-summary{
+    $self:&;
+
+    &__title{
+        margin-block-end: rem(20px);
+        display: inline-block;
+    }
+
+    &__label{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        color: $clr-grey-3;
+        text-transform: capitalize;
+    }
+
+    &__value{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+    }
+
+
+    &__item{
+        margin-block-end: rem(14px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--total{
+            padding-top: rem(12px);
+            margin-block: rem(24px);
+            border-top: 1px solid $clr-border;
+            #{$self}__label{
+                text-transform: uppercase;
+                font-size: $fs-h6;
+                line-height: $lh-h6;
+            }
+            #{$self}__value{
+                font-size: $fs-h3;
+                line-height: $lh-h3;
+            }
+        }
+
+        
+
+    }
+
+
+}

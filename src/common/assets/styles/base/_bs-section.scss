@@ -1,0 +1,414 @@
+//bs-section
+.bs-section {
+    $self: &;
+    padding: rem(60px) rem(96px);
+    @include mq-below($sm) {
+        padding: rem(40px) rem(20px);
+    }
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            padding: rem(60px) rem(50px);
+        }
+    }
+    &--typ-grey {
+        background-color: $clr-light;
+    }
+
+    &--pg-title{
+        #{$self}__section-head{
+            height: rem(158px);
+            margin-block-end: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include mq-below($sm){
+                height: rem(72px);
+            }
+    
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    height: rem(100px);
+                }
+            }
+        }
+    }
+
+    &__section-cont,
+    &__section-head {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: $fs-h2;
+        line-height: $lh-h2;
+        font-family: $font2;
+        text-transform: uppercase;
+        margin-block-end: rem(24px);
+        @include mq-below($sm) {
+            font-size: $fs-h4;
+            line-height: $lh-h4;
+        }
+
+        &--handle-id{
+            // @include mq-below($sm) {
+                text-transform: lowercase;
+            // }
+        }
+
+        &--highlight{
+            display: block;
+            font-size: $fs-h1-md;
+            line-height: $lh-h1-md;
+
+            @include mq-below($sm){
+                font-size: $fs-h2;
+                line-height: $lh-h2;
+            }
+        }
+
+        &__font-1-text{
+            
+
+            &--sm{
+                font-family: $font1;
+                font-weight: $font-thin;
+                font-size: $fs-h2;
+                line-height: $lh-h2;
+                letter-spacing: rem(10px);
+
+                @include mq-below($md){
+                    font-size: $fs-h8;
+                    line-height: $lh-h8;
+                    letter-spacing: rem(6px);
+                    margin-block-end: rem(12px);
+                }
+            }
+
+            &--lg{
+                font-family: $font1;
+                font-size: $fs-h1;
+                line-height: $lh-h1;
+
+                @include mq-below($md){
+                    font-size: $fs-h3;
+                    line-height: $lh-h3;
+                }
+            }
+        }
+    }
+
+    &__sub-title{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-block-start: rem(12px);
+
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__desc {
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        margin-block-end: rem(30px);
+        @include mq-below($sm) {
+            font-size: $fs-h8;
+            line-height: $lh-h6;
+            margin-block-end: rem(24px);
+        }
+    }
+
+    &__section-head {
+        margin-block-end: rem(30px);
+        @include mq-below($sm) {
+            margin-block-end: rem(24px);
+        }
+        #{$self}__title {
+            margin-block-end: 0;
+        }
+    }
+
+    &--typ-sm-container {
+        #{$self}__desc {
+            max-width: rem(1000px);
+            margin: 0 auto rem(30px);
+            @include mq-below($sm) {
+                margin-block-end: rem(24px);
+            }
+        }
+    }
+
+    &--typ-element {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: rem(275px);
+            z-index: -1;
+            background-color: $clr-light;
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    height: rem(225px);
+                }
+            }
+            @include mq-between($sm2, $md2){
+                @include orientation(portrait){
+                    height: rem(275px);
+                }
+            }
+        }
+
+        &--typ-lg{
+            &:before{
+
+                @include mq-below($md){
+                    height: rem(325px);
+                }
+
+                @include mq-between($sm, $sm2){
+                    @include orientation(portrait){
+                        height: rem(250px) !important;
+                    }
+                }
+
+                @include mq-between($sm, $lg){
+                    @include orientation(portrait){
+                        height: rem(246px);
+                    }
+                }
+
+                @include mq-between($sm, $lg){
+                    @include orientation(portrait){
+                        height: rem(330px);
+                    }
+                }
+            }
+
+            #{$self}__desc{
+                max-width: 80%;
+                margin: 0 auto;
+
+
+                @include mq-below($md){
+                    margin-block-start: rem(24px);
+                    margin-block-end: 0;
+                    max-width: initial;
+                }
+
+                @include mq-between($sm, $lg){
+                    @include orientation(portrait){
+                        margin-block-start: rem(24px);
+                        margin-block-end: 0;
+                        max-width: initial;
+                    }
+                }
+            }
+        }
+    }
+
+    &--sec-mission{
+        &:before{
+            @include mq-below($sm){
+                display: none;
+            }
+        }
+    }
+
+    &--typ-collections{
+        @include mq-below($sm){
+            text-align: left;
+        }
+    }
+
+    &--typ-faq{
+        padding: rem(60px) rem(235px);
+
+        @include mq-below($sm){
+            padding: rem(40px) rem(20px);
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                padding: rem(60px);
+            }
+        }
+    }
+
+    &--typ-footprint{
+        padding-block-start: rem(100px);
+    }
+
+    &--typ-challenge{
+        position: relative;
+
+        &:before{
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: rem(629px);
+            background-color: $clr-white;
+            @include mq-below($md){
+                display: none;
+            }
+            @include mq-between($sm, $lg){
+                @include orientation(portrait){
+                    display: none;
+                }
+            }
+        }
+
+        #{$self}__section-cont{
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &__note{
+        font-size: $fs-h10;
+        line-height: $lh-h10;
+        position: absolute;
+        bottom: rem(16px);
+        left: rem(644px);
+        @include mq-below($md){
+            position: relative;
+            bottom: auto;
+            left: auto;
+            text-align: center;
+            font-size: $fs-h11;
+            line-height: $fs-h10;
+        }
+        // @include mq-between($sm, $lg){
+        //     @include orientation(portrait){
+        //         left: rem(60px);
+        //     }
+        // }
+    }
+
+    &--typ-title{
+        padding-inline: rem(310px);
+        #{$self}__title{
+            margin-block-end: rem(24px);
+        }
+        #{$self}__desc, #{$self}__section-head{
+            margin-block-end: 0;
+        }
+
+        @include mq-below($md){
+            padding-inline: rem(20px);
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                padding-inline: rem(60px);
+            }
+        }
+    }
+
+    &--typ-features{
+        padding: rem(96px);
+
+        @include mq-below($sm){
+            padding: rem(40px) rem(20px);
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                padding: rem(60px) rem(50px);
+            }
+        }
+    }
+
+    &--typ-custom-tabs-on-image{
+        position: relative;
+        z-index: 1;
+        top: rem(-40px);
+        padding-block: 0;
+
+        @include mq-below($sm){
+            // top: rem(-50px);
+            top: 0;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                // top: rem(-75px);
+                top: 0;
+            }
+        }
+    }
+
+    &--typ-new-title{
+        padding-block: rem(90px);
+        @include mq-below($md){
+            padding-block: rem(60px);
+        }
+        #{$self}__title{
+            font-size: $fs-h1-lg;
+            line-height: $lh-h1-lg;
+
+            @include mq-below($md){
+                font-size: $fs-h4;
+                line-height: $lh-h4;
+            }
+        }
+    }
+
+    &--products{
+        #{$self}__title{
+            max-width: 55%;
+            margin: 0 auto;
+
+            @include mq-below($md){
+                max-width: 90%;
+            }
+        }
+
+        #{$self}__section-head{
+            margin-block-end: rem(44px);
+        }
+    }
+
+    &__more-info-list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(16px);
+        margin-block-start: rem(16px);
+
+        @include mq-below($md){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-block-start: rem(40px);
+        }
+    }
+
+    &__more-info-item{
+
+        &__tag{
+            display: block;
+        }
+    }
+
+    &--typ-customer-support{
+        border-bottom: 1px solid $clr-border;
+    }
+
+    &--typ-left-full{
+        overflow: hidden;
+        #{$self}__section-head{
+            padding: 0 rem(96px);
+            text-align: left;
+        }
+    }
+
+    
+}

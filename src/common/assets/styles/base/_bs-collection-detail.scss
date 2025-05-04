@@ -1,0 +1,146 @@
+//bs-collection-detail
+.bs-collection-detail{
+    border-radius: rem(24px);
+    background-color: $clr-light;
+    display: flex;
+    align-items: center;
+    height: rem(674px);
+    overflow: hidden;
+    @include mq-below($md){
+        flex-direction: column;
+    }
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            height: calc(100vh - rem(150px));
+        }
+    }
+    @include mq-between($md2, $lg){
+        @include orientation(portrait){
+            flex-direction: row;
+            height: 40vh;
+        }
+    }
+
+    &__media-wrap{
+        width: 65%;
+        height: 100%;
+        @include mq-below($md){
+            width: 100%;
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                height: 60%;
+            }
+        }
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                height: 100%;
+                width: 50%;
+            }
+        }
+    }
+
+    &__info-wrap{
+        width: 100%;
+        text-align: left;
+        padding: rem(80px) rem(60px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include mq-below($md){
+            width: 100%;
+            padding: rem(24px) rem(20px);
+        }
+    }
+
+    &__image{
+        object-fit: cover;
+    }
+
+    &__swiper-container{
+        height: 100%;
+        @include mq-below($md){
+            height: rem(300px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                height: 100%;
+            }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: rem(42px);
+            height: rem(42px);
+            @include mq-below($md){
+                width: rem(30px);
+                height: rem(30px);
+            }
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .swiper-button-prev {
+            left: rem(20px);
+            &:after {
+                background-image: url("../../images/icons/arrow-left.svg");
+            }
+        }
+
+        .swiper-button-next {
+            right: rem(20px);
+            &:after {
+                background-image: url("../../images/icons/arrow-right.svg");
+            }
+        }
+    }
+
+    &__title{
+        font-size: $fs-h2;
+        line-height: $lh-h2;
+        font-family: $font2;
+        text-transform: uppercase;
+        margin-block-end: rem(24px);
+        @include mq-below($sm) {
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+        }
+    }
+
+    &__desc{
+        font-size: $fs-h5;
+        line-height: rem(50px);
+        margin-block-end: rem(30px);
+        @include mq-below($sm) {
+            font-size: $fs-h8;
+            line-height: $lh-h6;
+            margin-block-end: rem(24px);
+        }
+    }
+
+    &__action-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(24px);
+
+        @include mq-below($md){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                flex-direction: row;
+            }
+        }
+    }
+
+
+}

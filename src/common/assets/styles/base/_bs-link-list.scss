@@ -1,0 +1,170 @@
+//bs-link-list
+.bs-link-list{
+    $self: &;
+
+    &__title{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+        margin-block-end: rem(10px);
+    }
+
+    &__link{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        text-transform: uppercase;
+        padding: rem(6px) 0;
+        transition: all 0.3s ease;
+        display: inline-block;
+
+        &:hover, &--active{
+            font-weight: $font-semi-bold;
+        }
+
+        &#{$self}__title{
+            margin-block-end: 0;
+        }
+    }
+
+    &__list-item{
+        &--level-1{
+            // margin-block-end: rem(24px);
+            // &:last-child{
+            //     margin-block-end: 0;
+            // }
+            #{$self}__list-wrap{
+                // display: none;
+                #{$self}__link{
+                    text-transform: capitalize;
+                    font-size: $fs-h9;
+                    line-height: $lh-h9;
+                }
+
+                #{$self}__list-item{
+                    &:last-child{
+                        margin-block-end: rem(24px);
+                    }
+                }
+            }
+            > #{$self}__link{
+                position: relative;
+                // &:after{
+                //     content: '';
+                //     display: inline-block;
+                //     @include svg-icon("../../images/icons/down.svg", rem(24px), rem(24px));
+                //     @include background-opacity($clr-dark, 1);
+                //     position: absolute;
+                //     top: 50%;
+                //     transform: translateY(-50%);
+                // }
+
+                &:hover{
+                    font-weight: $font-regular;
+                }
+            }
+
+            // &:hover{
+            //     #{$self}__list-wrap{
+            //         display: block;
+            //     }
+            // }
+
+            
+        }
+    }
+
+    &__accordion{
+        .MuiPaper-root{
+            margin: 0 !important;  
+            background: transparent !important;   
+            box-shadow: none !important;  
+            
+            &:before{
+                display: none;
+            }
+
+            &.Mui-expanded{
+                margin: 0 !important;
+                min-height: initial !important;
+            }
+
+            .MuiButtonBase-root{
+                min-height: initial !important;
+                padding: 0 !important;
+                justify-content: flex-start !important;
+
+
+                &.Mui-expanded{
+                    min-height: initial !important;
+                }
+
+                .MuiAccordionSummary-content{
+                    margin-block: rem(8px) !important;
+                    flex-grow: initial !important;
+
+                    &.Mui-expanded{
+                        margin-block: rem(8px) !important;
+                    }
+                }
+
+                .MuiAccordionSummary-expandIconWrapper{
+                    .icon{
+                        width: rem(24px);
+                        height: rem(24px);
+                    }
+                }
+
+                
+            }
+
+            .MuiAccordionDetails-root{
+                padding: 0 !important;
+            }
+        }
+    }
+
+    &__image-wrap{
+        width: rem(360px);
+        height: rem(320px);
+        position: relative;
+
+        &:before{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: $clr-black;
+            background: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.07) 100%);
+        }
+    }
+
+    &__image-title-wrap{
+        position: absolute;
+        left: rem(26px);
+        bottom: rem(26px);
+        z-index: 2;
+    }
+
+    &__image-title{
+        font-size: $fs-h7;
+        line-height: $lh-h5;
+        color: $clr-white;
+        font-weight: $font-semi-bold;
+        text-transform: uppercase;
+
+        &--highlight{
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+            font-family: $font2;
+            display: block;
+            font-weight: $font-regular;
+        }
+    }
+
+
+
+}

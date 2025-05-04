@@ -1,0 +1,132 @@
+//bs-endurance
+.bs-endurance{
+    $self:&;
+    display: flex;
+    align-items: center;
+    gap: rem(110px);
+
+    @include mq-below($md){
+        flex-direction: column-reverse;
+        gap: rem(60px);
+    }
+
+    &__media-wrap{
+        width: rem(648px);
+        height: rem(762px);
+        border-radius: rem(18px);
+        overflow: hidden;
+
+        @include mq-below($md){
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content-wrap{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: rem(64px);
+
+        @include mq-below($md){
+            width: 100%;
+            gap: rem(32px);
+        }
+    }
+
+    &__text{
+        font-size: $fs-h4;
+        line-height: $lh-h4;
+        text-transform: uppercase;
+        display: block;
+
+        @include mq-below($md){
+            font-size: $fs-h8;
+            line-height: $lh-h8;
+        }
+
+        &--letter-spacing{
+            letter-spacing: rem(3px);
+            font-weight: $font-thin;
+        }
+
+
+        &--bold{
+            font-weight: $font-semi-bold;
+            margin-block-end: rem(20px);
+            @include mq-below($md){
+                margin-block-end: rem(4px);
+            }
+        }
+
+        &--highlight{
+            font-family: $font2;
+            font-size: $fs-h1-md;
+            line-height: $fs-h1-md;
+            @include mq-below($md){
+                font-size: $fs-h3;
+                line-height: $lh-h3;
+            }
+        }
+    }
+
+    &__title{
+        margin-block-end: rem(20px);
+    }
+
+    &__title-desc{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__logo-list{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: rem(16px);
+        justify-content: center;
+
+        @include mq-below($md){
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(32px) rem(16px);
+        }
+    }
+
+    &__logo-item{
+        width: rem(160px);
+    }
+
+    &__logo-block-icon-wrap{
+        width: rem(100px);
+        height: rem(100px);
+        background-color: $clr-white;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto rem(12px);
+    }
+
+    &__logo-block{
+        text-align: center;
+        padding: 0 rem(10px);
+    }
+
+    &__logo-block-label{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        font-weight: $font-medium;
+        text-transform: capitalize;
+
+        @include mq-below($md){
+            font-size: $fs-h8;
+            line-height: $lh-h8;
+        }
+    }
+
+
+}

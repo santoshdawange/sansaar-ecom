@@ -1,0 +1,64 @@
+//bs-shop-infography
+.bs-shop-infography{
+    $self: &;
+    display: flex;
+
+    &__media-wrap, &__info-wrap{
+        width: 50%;
+    }
+
+    &__info-wrap{
+        padding-inline-start: rem(88px);
+        padding-inline-end: rem(96px);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title{
+        font-size: $fs-h2;
+        line-height: $lh-h2;
+        max-width: 75%;
+        margin-block-end: rem(12px);
+    }
+
+    &__sub-title{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        margin-block-end: rem(36px);
+    }
+
+    &__collection-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
+    }
+
+    &__collection-item{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
+        margin-block-end: rem(42px);
+        white-space: nowrap;
+
+
+        &:before{
+            content: '|';
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+        }
+
+        &:first-child{
+            &:before{
+                display: none;
+            }
+        }
+    }
+
+
+
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "logo1",
+        "src": "https://res.cloudinary.com/dci1aiukm/image/upload/v1721238184/Frame.svg"
+    },
+    {
+        "id": 2,
+        "name": "logo2",
+        "src": "https://res.cloudinary.com/dci1aiukm/image/upload/v1720659843/2_hfhekw.svg"
+    },
+    {
+        "id": 3,
+        "name": "logo3",
+        "src": "https://res.cloudinary.com/dci1aiukm/image/upload/v1721238185/NCL.svg"
+    },
+    {
+        "id": 4,
+        "name": "logo4",
+        "src": "https://res.cloudinary.com/dci1aiukm/image/upload/v1720676290/ISO_sxso5i.svg"
+    },
+    {
+        "id": 5,
+        "name": "logo5",
+        "src": "https://res.cloudinary.com/dci1aiukm/image/upload/v1720659843/5_bajohf.svg"
+    },
+    {
+        "id": 6,
+        "name": "logo6",
+        "src": "https://res.cloudinary.com/dci1aiukm/image/upload/v1720659843/6_xl3kcd.svg"
+    },
+    {
+        "id": 7,
+        "name": "logo7",
+        "src": "https://res.cloudinary.com/dci1aiukm/image/upload/v1720659843/7_npddkl.svg"
+    }
+]

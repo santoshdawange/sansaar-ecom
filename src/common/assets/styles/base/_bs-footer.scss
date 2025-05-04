@@ -1,0 +1,102 @@
+//bs-footer
+.bs-footer {
+    $self: &;
+    padding: rem(70px) rem(325px);
+
+    @include mq-between($sm2, $md2){
+        @include orientation(portrait){
+            padding: rem(70px) rem(50px);
+        }
+    }
+
+    &--typ-dark{
+        background-color: $clr-light;
+    }
+    
+    @include mq-below($sm) {
+        padding: rem(32px) rem(16px);
+    }
+    &__logo {
+        max-width: rem(250px);
+        display: inline-block;
+        @include mq-below($sm) {
+            max-width: rem(150px);
+        }
+    }
+
+    &__logo-wrap {
+        text-align: center;
+    }
+
+    &__nav-wrap {
+        margin-block: rem(42px);
+        @include mq-below($sm) {
+            margin-block: rem(24px);
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: rem(40px);
+        flex-flow: row wrap;
+
+
+        @include mq-below($sm) {
+            flex-direction: column;
+            gap: rem(10px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                flex-direction: row;
+                flex-flow: row wrap;
+                gap: rem(20px);
+            }
+        }
+    }
+
+    // &__nav-item{
+    //     width: rem(230px);
+    //     text-align: center;
+    // }
+
+    &__nav-link {
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        @include mq-below($sm) {
+            font-size: $fs-h7;
+            line-height: $lh-h7;
+        }
+
+        &:hover, &--active{
+            font-weight: $font-bold;
+            // color: $clr-dark-2;
+        }
+    }
+
+    &__label {
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        white-space: nowrap;
+        @include mq-below($sm) {
+            font-size: $fs-h7;
+            line-height: $lh-h7;
+        }
+    }
+
+    &__foot-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(52px);
+        @include mq-below($sm) {
+            gap: rem(24px);
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+//lyt-product-list
+.lyt-product-list{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    &__filter-wrap{
+        position: sticky;
+        top: rem(155px);
+        height: calc(100vh - rem(155px)); 
+        padding: 10px;
+        align-self: flex-start;
+        width: rem(450px);
+    }
+
+    &__product-list-wrap{
+        flex-grow: 1; 
+        padding: rem(60px) rem(100px) rem(45px) rem(45px);
+    }
+
+    &__wrap{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(40px) rem(28px);
+    }
+
+    &__title-text{
+        font-size: $fs-h2-sm;
+        line-height: $lh-h2-sm;
+        font-family: $font2;
+        text-transform: uppercase;
+    }
+
+    &__title{
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
+    }
+    
+    &__back-link{
+        width: rem(40px);
+        height: rem(40px);
+    }
+
+    &__head-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-end: rem(64px);
+    }
+
+    &__filter-feature-wrap{   
+        margin-block-end: rem(60px);
+    }
+     
+    
+
+
+
+}

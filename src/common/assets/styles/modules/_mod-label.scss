@@ -1,0 +1,19 @@
+//mod-label
+.mod-label {
+    font-size: $fs-h3;
+    line-height: $lh-h3;
+    font-weight: $font-thin;
+    padding: rem(10px) rem(40px);
+    border-radius: rem(12px);
+    background-color: $clr-light;
+    display: inline-block;
+    @include mq-below($sm) {
+        padding: rem(8px) rem(20px);
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+    }
+    @include mq-between($sm, $md2){
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+    }
+}

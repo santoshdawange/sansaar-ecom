@@ -1,0 +1,597 @@
+.icon {
+    display: inline-block;
+
+    &.icon-search {
+        @include svg-icon("../../images/icons/search.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+    &.icon-menu {
+        @include svg-icon("../../images/icons/menu.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+    &.icon-close {
+        @include svg-icon("../../images/icons/close.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+    &.icon-simple-close {
+        @include svg-icon("../../images/icons/simple-close.svg", rem(12px), rem(12px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.arrow-left {
+        @include svg-icon("../../images/icons/arrow-left.svg", rem(50px), rem(50px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.arrow-right {
+        @include svg-icon("../../images/icons/arrow-right.svg", rem(50px), rem(50px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-facebook {
+        @include svg-icon("../../images/icons/facebook.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-youtube {
+        @include svg-icon("../../images/icons/youtube.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-instagram {
+        @include svg-icon("../../images/icons/instagram.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-linkedin {
+        @include svg-icon("../../images/icons/linkedin.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-quote-start {
+        @include svg-icon("../../images/icons/quote-start.svg", rem(58px), rem(42px));
+        @include background-opacity($clr-light, 1);
+    }
+
+    &.icon-quote-end {
+        @include svg-icon("../../images/icons/quote-end.svg", rem(58px), rem(42px));
+        @include background-opacity($clr-light, 1);
+    }
+
+    &.icon-angle-down {
+        @include svg-icon("../../images/icons/angle-down.svg", rem(18px), rem(18px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-play {
+        @include svg-icon("../../images/icons/play.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-white, 1);
+    }
+
+    &.icon-mute {
+        @include svg-icon("../../images/icons/mute.svg", rem(32px), rem(32px));
+        @include background-opacity($clr-white, 1);
+    }
+
+    &.icon-unmute {
+        @include svg-icon("../../images/icons/unmute.svg", rem(32px), rem(32px));
+        @include background-opacity($clr-white, 1);
+    }
+
+    &.icon-solar {
+        @include svg-icon("../../images/icons/solar.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-delete {
+        @include svg-icon("../../images/icons/delete.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-cotton {
+        @include svg-icon("../../images/icons/cotton.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-recycle {
+        @include svg-icon("../../images/icons/recycle.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-down {
+        @include svg-icon("../../images/icons/down.svg", rem(50px), rem(50px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-chair {
+        @include svg-icon("../../images/icons/chair.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-white, 1);
+    }
+
+    &.icon-curtain {
+        @include svg-icon("../../images/icons/curtain.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-white, 1);
+    }
+
+    &.icon-filter {
+        @include svg-icon("../../images/icons/filter.svg", rem(22px), rem(10px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-share {
+        @include svg-icon("../../images/icons/share.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-doc {
+        @include svg-icon("../../images/icons/doc.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-like {
+        @include svg-icon("../../images/icons/like.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-contact {
+        @include svg-icon("../../images/icons/contact.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-wash-30 {
+        @include svg-icon("../../images/icons/wash-30.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-no-bleach {
+        @include svg-icon("../../images/icons/no-bleach.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-tumble-dry {
+        @include svg-icon("../../images/icons/tumble-dry.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-dry-clean {
+        @include svg-icon("../../images/icons/dry-clean.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-iron {
+        @include svg-icon("../../images/icons/iron.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-non-toxic {
+        @include svg-icon("../../images/icons/non-toxic.svg", rem(60px), rem(60px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-sustainably {
+        @include svg-icon("../../images/icons/sustainably.svg", rem(60px), rem(60px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-touch {
+        @include svg-icon("../../images/icons/touch.svg", rem(60px), rem(60px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-washable {
+        @include svg-icon("../../images/icons/washable.svg", rem(60px), rem(60px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-quality {
+        @include svg-icon("../../images/icons/quality.svg", rem(60px), rem(60px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-social {
+        @include svg-icon("../../images/icons/social.svg", rem(60px), rem(60px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-check-circle {
+        @include svg-icon("../../images/icons/check-circle.svg", rem(96px), rem(96px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-back {
+        @include svg-icon("../../images/icons/back.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-pin{
+        @include svg-icon("../../images/icons/map-pin.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark, 1);
+    }
+    &.icon-copy{
+        @include svg-icon("../../images/icons/copy-link.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-white, 1);
+    }
+
+    &.icon-truck{
+        @include svg-icon("../../images/icons/truck.svg", rem(160px), rem(160px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-yarn{
+        @include svg-icon("../../images/icons/yarn.svg", rem(160px), rem(160px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-drop {
+        @include svg-icon("../../images/icons/drop.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-energy {
+        @include svg-icon("../../images/icons/energy.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-gases {
+        @include svg-icon("../../images/icons/gases.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-power-station {
+        @include svg-icon("../../images/icons/power-station.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-water-harvest {
+        @include svg-icon("../../images/icons/water-harvest.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-direction {
+        @include svg-icon("../../images/icons/direction.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-reset {
+        @include svg-icon("../../images/icons/reset.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-user {
+        @include svg-icon("../../images/icons/user.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-circle-tick {
+        @include svg-icon("../../images/icons/circle-tick.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-circle-empty {
+        @include svg-icon("../../images/icons/circle-empty.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-sad{
+        @include svg-icon("../../images/icons/sad.svg", rem(100px), rem(100px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-filter-2 {
+        @include svg-icon("../../images/icons/filter-2.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-left{
+        @include svg-icon("../../images/icons/left.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-dark-2, 1);
+    }
+
+    &.icon-cart{
+        @include svg-icon("../../images/icons/cart.svg", rem(36px), rem(36px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-leaf{
+        @include svg-icon("../../images/icons/leaf.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-pallet-5, 1);
+    }
+    
+    &.icon-o-right{
+        @include svg-icon("../../images/icons/o-right.svg", rem(36px), rem(36px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-o-left{
+        @include svg-icon("../../images/icons/o-left.svg", rem(36px), rem(36px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-like-fill {
+        @include svg-icon("../../images/icons/like-fill.svg", rem(30px), rem(30px));
+        @include background-opacity($clr-white, 1);
+    }
+
+    &.icon-bedsheet{
+        @include svg-icon("../../images/icons/bedsheet.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-cushion-cover{
+        @include svg-icon("../../images/icons/cushion-cover.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-duvet{
+        @include svg-icon("../../images/icons/duvet.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-comfortor{
+        @include svg-icon("../../images/icons/comfortor.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-pillow-cover{
+        @include svg-icon("../../images/icons/pillow-cover.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-bed-in-bag{
+        @include svg-icon("../../images/icons/bed-in-bag.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-breathable{
+        @include svg-icon("../../images/icons/breathable.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-feather-soft{
+        @include svg-icon("../../images/icons/feather-soft.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-no-color-bleeding{
+        @include svg-icon("../../images/icons/no-color-bleeding.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-premium-quality{
+        @include svg-icon("../../images/icons/premium-quality.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-easy-maintainance{
+        @include svg-icon("../../images/icons/easy-maintainance.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-azo-free-dyes{
+        @include svg-icon("../../images/icons/azo-free-dyes.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-secure-payment-options{
+        @include svg-icon("../../images/icons/secure-payment-options.svg", rem(50px), rem(50px));
+        @include background-opacity($clr-pallet-5, 1);
+    }
+
+    &.icon-express-delivery{
+        @include svg-icon("../../images/icons/express-delivery.svg", rem(50px), rem(50px));
+        @include background-opacity($clr-pallet-5, 1);
+    }
+
+    &.icon-free-delivery{
+        @include svg-icon("../../images/icons/free-delivery.svg", rem(50px), rem(50px));
+        @include background-opacity($clr-pallet-5, 1);
+    }
+
+    &.icon-dedicated-customer-support{
+        @include svg-icon("../../images/icons/dedicated-customer-support.svg", rem(50px), rem(50px));
+        @include background-opacity($clr-pallet-5, 1);
+    }
+
+    &.icon-filter-3{
+        @include svg-icon("../../images/icons/filter-3.svg", rem(35px), rem(35px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-pallete{
+        @include svg-icon("../../images/icons/pallete.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-ruler{
+        @include svg-icon("../../images/icons/ruler.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-increment{
+        @include svg-icon("../../images/icons/increment.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-decrement{
+        @include svg-icon("../../images/icons/decrement.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-fill-right{
+        @include svg-icon("../../images/icons/fill-right.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-delivery{
+        @include svg-icon("../../images/icons/delivery.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-slide-left{
+        @include svg-icon("../../images/icons/slide-left.svg", rem(56px), rem(56px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-slide-right{
+        @include svg-icon("../../images/icons/slide-right.svg", rem(56px), rem(56px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-trash{
+        @include svg-icon("../../images/icons/trash.svg", rem(32px), rem(32px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-tag{
+        @include svg-icon("../../images/icons/tag.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-expand-more{
+        @include svg-icon("../../images/icons/expand-more.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-user-circle{
+        @include svg-icon("../../images/icons/user-circle.svg", rem(36px), rem(36px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-home{
+        @include svg-icon("../../images/icons/home.svg", rem(36px), rem(36px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-blank-check{
+        @include svg-icon("../../images/icons/blank-check.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-filled-check{
+        @include svg-icon("../../images/icons/filled-check.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-blank-radio{
+        @include svg-icon("../../images/icons/blank-radio.svg", rem(32px), rem(32px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-filled-radio{
+        @include svg-icon("../../images/icons/filled-radio.svg", rem(32px), rem(32px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-edit{
+        @include svg-icon("../../images/icons/edit.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-success{
+        @include svg-icon("../../images/icons/success.svg", rem(120px), rem(120px));
+        @include background-opacity($clr-pallet-7, 1);   
+    }
+
+    &.icon-cart-line{
+        @include svg-icon("../../images/icons/cart-line.svg", rem(28px), rem(28px));
+        @include background-opacity($clr-grey-3, 1);   
+    }
+
+    &.icon-invoice-download{
+        @include svg-icon("../../images/icons/invoice-download.svg", rem(24px), rem(24px));
+        @include background-opacity($clr-dark, 1);   
+    }
+
+    &.icon-forbidden{   
+        @include svg-icon("../../images/icons/forbidden.svg", rem(80px), rem(80px));
+        @include background-opacity($clr-pallet-5, 1);   
+    }
+
+    &.icon-child-pet-friendly{
+        @include svg-icon("../../images/icons/child-pet-friendly.svg", rem(100px), rem(100px));
+        @include background-opacity($clr-dark, 1);     
+    }
+    
+    &.icon-low-maintainance{
+        @include svg-icon("../../images/icons/low-maintainance.svg", rem(100px), rem(100px));
+        @include background-opacity($clr-dark, 1);  
+    }
+
+    &.icon-easy-to-clean{
+        @include svg-icon("../../images/icons/easy-to-clean.svg", rem(100px), rem(100px));
+        @include background-opacity($clr-dark, 1);  
+    }
+
+    &.icon-stain-resistant{
+        @include svg-icon("../../images/icons/stain-resistant.svg", rem(100px), rem(100px));
+        @include background-opacity($clr-dark, 1);  
+    }
+
+    &.icon-resilient{
+        @include svg-icon("../../images/icons/resilient.svg", rem(100px), rem(100px));
+        @include background-opacity($clr-dark, 1);  
+    }
+
+    &.icon-machine-washable{
+        @include svg-icon("../../images/icons/machine-washable.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-durable{
+        @include svg-icon("../../images/icons/durable.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-minimum-shrinkage{
+        @include svg-icon("../../images/icons/minimum-shrinkage.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-no-lint-formation{
+        @include svg-icon("../../images/icons/no-lint-formation.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-lightweight{
+        @include svg-icon("../../images/icons/lightweight.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-100-cotton{
+        @include svg-icon("../../images/icons/100-cotton.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-200-gsm-micro-fibre-filling{
+        @include svg-icon("../../images/icons/200-gsm-micro-fibre-filling.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-reversible-design{
+        @include svg-icon("../../images/icons/reversible-design.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-hypoallergenic{
+        @include svg-icon("../../images/icons/hypoallergenic.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-moisture-absorbent{
+        @include svg-icon("../../images/icons/moisture-absorbent.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    &.icon-premium-quilting{
+        @include svg-icon("../../images/icons/premium-quilting.svg", rem(40px), rem(40px));
+        @include background-opacity($clr-dark, 1);
+    }
+
+    
+
+    
+
+    
+
+    
+}

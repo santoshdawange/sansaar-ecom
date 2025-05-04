@@ -1,0 +1,265 @@
+.bs-form {
+    $self: &;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40px) rem(26px);
+    max-width: 100%;
+    width: rem(1148px);
+    margin: 0 auto;
+    @include mq-below($sm) {
+        gap: rem(28px);
+        grid-template-columns: repeat(1, 1fr);
+    }
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__form-group {
+        &--full-width {
+            grid-column: span 2;
+            @include mq-below($sm) {
+                grid-column: auto;
+            }
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+    &__form-bottom-wrap {
+        grid-column: span 2;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mq-below($sm) {
+            grid-column: auto;
+            flex-direction: column;
+            gap: rem(24px);
+            align-items: flex-start;
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                grid-column: span 2;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                flex-direction: column;
+                align-items: flex-start;
+                gap: rem(32px);
+            }
+        }
+    }
+    &__form-control {
+        &.MuiFormControl-root {
+            width: 100%;
+        }
+
+        &--text-area{
+            textarea{
+                height: 100% !important;
+            }
+        }
+    }
+    .bs-btn {
+        &__btn-solid {
+            width: rem(148px);
+            font-weight: normal;
+            text-transform: capitalize;
+            color: $clr-white;
+            font-size: $fs-h5;
+            line-height: normal;
+            padding: rem(14px) rem(42px);
+            border-radius: rem(8px);
+            @include mq-below($sm) {
+                font-size: $fs-h7;
+            }
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    margin-left: auto;
+                    width: 50%;
+                }
+            }
+        }
+    }
+    .MuiFormLabel-root,
+    .MuiInputBase-root {
+        font-family: $font1;
+        font-size: $fs-h5;
+        line-height: normal;
+        color: $clr-dark !important;
+        text-align: left;
+        @include mq-below($sm) {
+            font-size: $fs-h7;
+        }
+    }
+    .MuiOutlinedInput-notchedOutline {
+        border: 1px solid $clr-dark !important;
+    }
+    .MuiSelect-icon {
+        right: rem(20px);
+    }
+    .MuiInputBase-multiline {
+        height: rem(150px);
+        padding-block-start: rem(10px);
+        @include mq-below($sm) {
+            height: rem(120px);
+        }
+    }
+    .textarea {
+        .MuiFormLabel-root {
+            -webkit-transform: translate(14px, rem(10px)) scale(1);
+            -moz-transform: translate(14px, rem(10px)) scale(1);
+            -ms-transform: translate(14px, rem(10px)) scale(1);
+            transform: translate(14px, rem(10px)) scale(1);
+            &[data-shrink="true"] {
+                -webkit-transform: translate(14px, rem(-11px)) scale(0.75);
+                -moz-transform: translate(14px, rem(-11px)) scale(0.75);
+                -ms-transform: translate(14px, rem(-11px)) scale(0.75);
+                transform: translate(14px, rem(-11px)) scale(0.75);
+                max-width: calc(100% - 32px);
+            }
+        }
+    }
+
+    &__error-text {
+        font-size: $fs-h9;
+        line-height: $lh-h9;
+        color: $clr-error;
+        font-weight: $font-semi-bold;
+        @include mq-below($sm) {
+            font-size: $fs-h10;
+        }
+    }
+
+    &__error {
+        position: relative;
+
+        #{$self}__error-text {
+            position: absolute;
+            left: 0;
+            top: calc(100% + rem(4px));
+        }
+    }
+
+    &__field-label{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+        color: $clr-dark;
+        font-weight: $font-semi-bold;
+        margin-block-end: rem(12px);
+        display: block;
+    }
+
+    &__action-wrap{
+        margin-block-start: rem(40px);
+        &__list{
+            display: flex;
+            align-items: center;
+            gap: rem(40px);
+        }
+
+        &__item{
+            position: relative;
+
+            &:after{
+                content: '';
+                width: 1px;
+                top: 0;
+                height: rem(30px);
+                right: rem(-24px);
+                position: absolute;
+                background-color: $clr-dark;
+
+            }
+
+            &:last-child{
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__action-btn{
+        margin-block-start: rem(60px);
+    }
+
+    &__selection-action-wrap, &__action-wrap{
+        &.MuiGrid-item{
+            margin-block-start: rem(20px);
+        }
+
+        .bs-checkbox{
+            &__label{
+
+                &:before{
+                    width: rem(20px);
+                    height: rem(20px);
+                }
+
+                &:after{
+                    width: rem(4px) !important;
+                    height: rem(10px) !important;
+                    border-width: 0 rem(2px) rem(2px) 0 !important;
+                    left: rem(9px) !important;
+                    top: rem(8px) !important;
+                }
+
+                &--regular-uppercase{
+                    font-weight: $font-regular !important;
+                    text-transform: uppercase !important;
+                }
+            }
+        }
+    }
+
+    &--typ-column{
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px);
+
+        .MuiFormLabel-root, .MuiInputBase-root{
+            text-transform: uppercase;
+            font-weight: $font-semi-bold;
+            font-size: $fs-h6;
+            border-radius: rem(12px);
+        }
+
+        #{$self}__form-bottom-wrap{
+            flex-direction: column;
+            gap: rem(20px) 0;
+        }
+
+        #{$self}__action-separator{
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+            text-transform: uppercase;
+            font-weight: $font-bold;
+            color: $clr-black;
+        }
+
+        .bs-btn {
+            &__btn-solid {
+                &--typ-xxl{
+                    font-size: $fs-h5;
+                    line-height: $lh-h5;
+                    // padding: rem(28px);
+                    padding: rem(16px) rem(28px);
+                    border-radius: rem(20px);
+                    text-transform: uppercase;
+                    font-weight: $font-bold;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

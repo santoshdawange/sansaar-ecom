@@ -1,0 +1,127 @@
+//bs-sub-menu
+.bs-sub-menu{
+    $self:&;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: rem(156px);
+    background-color: $clr-light;
+    visibility: hidden;
+    perspective: 1000px;
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+    transition: all 0.3s ease;
+    // padding: rem(70px);
+    padding: rem(22px) rem(70px);
+    -webkit-box-shadow: 0px 10px 53px -19px rgba(153,153,153,0.75);
+    -moz-box-shadow: 0px 10px 53px -19px rgba(153,153,153,0.75);
+    box-shadow: 0px 10px 53px -19px rgba(153,153,153,0.75);
+
+    @include mq-below($md){
+        box-shadow: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        padding: 0;
+        overflow-y: auto;
+        transform: translateX(150%);
+        transition: all 0.3s ease;
+        perspective: initial;
+    }
+
+    @include mq-between($md2, $lg){
+        @include orientation(portrait){
+            box-shadow: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            padding: 0;
+            overflow-y: auto;
+            transform: translateX(150%);
+            transition: all 0.3s ease;
+            perspective: initial;
+        }
+    }
+
+    &__cont{
+        max-width: rem(1170px);
+        margin: 0 auto;
+        display: flex;
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
+        gap: rem(100px);
+        justify-content: center;
+
+        @include mq-below($md){
+            display: flex;
+            flex-direction: column;
+            gap: rem(30px);
+            max-width: initial;
+            width: 100%;
+            padding: rem(30px) rem(20px);
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                display: flex;
+                flex-direction: column;
+                gap: rem(30px);
+                max-width: initial;
+                width: 100%;
+                padding: rem(30px) rem(20px);
+            }
+        }
+
+        .bs-link-list{
+            min-width: rem(200px);
+
+            @include mq-below($md){
+                min-width: initial;
+            }
+        }
+    }
+
+    &__head{
+        display: none;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+
+        @include mq-below($md){
+            display: flex;
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                display: flex;
+            }
+        }
+
+        #{$self}__back-button{
+            position: absolute;
+            left: rem(15px);
+            top: 50%;
+            transform: translateY(-50%);
+            width: rem(40px);
+            height: rem(40px);
+        }
+
+        #{$self}__head-title{
+            font-size: $fs-h6;
+            line-height: $lh-h6;
+            text-transform: uppercase;
+            font-family: $font2;
+            font-weight: $font-medium;
+        }
+    }
+}

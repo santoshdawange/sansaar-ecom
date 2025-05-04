@@ -1,0 +1,46 @@
+//bs-progress
+.bs-progress{
+    $self:&;
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+
+    &__track-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(80px);
+    }
+
+    &__track-item{
+        width: rem(20px);
+        height: rem(20px);
+        border-radius: 100%;
+        background-color: $clr-grey2;
+        position: relative;
+
+        &:before{
+            content: '';
+            width: rem(80px);
+            border-top: rem(2px) dashed $clr-grey2;
+            position: absolute;
+            right: rem(20px);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:first-child{
+            &::before{
+                display: none;
+            }
+        }
+
+        &--completed{
+            background-color: $clr-pallet-5;
+
+            &::before{
+                border-color: $clr-pallet-5;
+            }
+        }
+    }
+
+}

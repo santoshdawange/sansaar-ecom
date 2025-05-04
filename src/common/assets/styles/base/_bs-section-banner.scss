@@ -1,0 +1,281 @@
+//bs-section-banner
+.bs-section-banner {
+    $self: &;
+    // height: calc(100vh - rem(156px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    // @include mq-below($sm){
+    //     height: auto;
+    // }
+    // @include mq-between($sm2, $md2){
+    //     @include orientation(portrait){
+    //         height: auto;
+    //     }
+    // }
+
+    // @include mq-between($sm2, $lg){
+    //     @include orientation(landscape){
+    //         height: auto;
+    //     }
+    // }
+
+    &--typ-full-height{
+        @include mq-below($sm){
+            min-height: 100svh;
+        }
+
+        @include mq-between($sm, $md2){
+            // height: auto;
+            min-height: initial;
+        }
+    }
+
+    &:hover {
+        #{$self}__image {
+            transform: scale(1);
+        }
+    }
+
+    &__image {
+        transition: all 0.3s ease;
+        transform: scale(1.05);
+    }
+
+    &__media-wrap {
+        width: 100%;
+        height: rem(496px);
+        overflow: hidden;
+        @include mq-below($sm){
+            height: rem(256px);
+        }
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                height: rem(450px);
+            }
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(landscape){
+                height: rem(560px);
+            }
+        }
+    }
+
+    &__info-wrap {
+        padding: rem(70px) rem(156px) rem(70px) rem(156px);
+
+        @include mq-below($sm) {
+            padding: rem(55px) rem(20px) rem(55px) rem(20px);
+        }
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                padding: rem(40px) rem(50px) rem(65px) rem(50px);
+            }
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(landscape){
+                padding: rem(90px);
+            }
+        }
+    }
+
+    &__desc-wrap{
+        .bs-section__desc{
+            margin-block-end: 0;
+
+            @include mq-below($sm){
+                // line-height: $lh-h5;
+            }
+        }
+    }
+
+    .lyt-logo{
+        margin-block-start: rem(56px);
+
+        @include mq-below($sm){
+            margin-block-start: rem(32px);
+        }
+    }
+
+    &--no-hover-interaction{
+        #{$self}__image{
+            transform: scale(1);
+        }
+    }
+
+    &__title-wrap{
+        width: 100%;
+        height: rem(200px);
+        background-color: $clr-light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mq-below($sm){
+            height: rem(72px);
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                height: rem(100px);
+            }
+        }
+
+        .bs-section__title{
+            margin-block-end: 0;
+        }
+    }
+
+    &--info-small{
+        #{$self}__desc-wrap{
+            max-width: 80%;
+            margin: 0 auto;
+            @include mq-below($sm){
+                max-width: initial;
+            }
+
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    max-width: initial;
+                }
+            }
+        }
+        .bs-section__desc{
+            @include mq-below($sm){
+                margin-block-end: 0;
+            }
+
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    margin-block-end: 0;
+                }
+            }
+        }
+    }
+
+    &--on-image{
+        position: relative;
+
+        #{$self}__info-wrap{
+            position: absolute;
+            top: rem(45px);
+            z-index: 1;
+            padding: 0;
+
+            @include mq-below($sm){
+                top: rem(24px);
+            }
+        }
+    }
+
+    &--variant-typ-2{
+        .bs-section__title{
+            >span{
+                display: block;
+            }
+        }
+
+        #{$self}__media-wrap{
+            height: rem(800px);
+        }
+
+        #{$self}__title-wrap{
+            padding-block: rem(100px);
+            height: initial;
+
+            @include mq-below($md){
+                padding-block: rem(50px);
+            }
+        }
+    }
+
+    &--variant-typ-3{
+        position: relative;
+        height: calc(100vh - rem(140px));
+        max-height: rem(850px);
+
+        &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background-color: $clr-image-overlay;
+            z-index: 1;
+        }
+
+        #{$self}__media-wrap{
+            height: 100%;
+        }
+
+        #{$self}__info-wrap{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            position: absolute;
+            left: rem(96px);
+            right: rem(96px);
+            bottom: rem(80px);
+            top: auto;
+            z-index: 2;
+        }
+
+        #{$self}__desc-wrap{
+            text-align: left;
+            max-width: rem(1000px);
+
+            .bs-section{
+
+                &__title{
+                    font-size: $fs-h1-mb;
+                    line-height: $lh-h1-mb;
+                    font-family: $font2;
+                    text-transform: uppercase;
+                    color: $clr-white;
+                    margin-block-end: rem(12px);
+                }
+
+                &__desc{
+                    font-size: $fs-h4;
+                    line-height: $lh-h4;
+                    font-weight: $font-regular;
+                    color: $clr-white;
+                    text-transform: initial;
+                    font-family: $font1;
+                }
+            }
+        }
+
+        #{$self}__action{
+            padding: rem(24px) rem(65px);
+        }
+    }
+
+    &--variant-typ-display-link{
+        #{$self}__media-wrap{
+            border-radius: rem(20px);
+            height: rem(744px);
+            position: relative;
+
+            @include mq-below($md){
+                height: 50vh;
+            }
+
+            #{$self}__action{
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                right: 0;
+                bottom: rem(44px);
+                margin: 0 auto;
+            }
+        }
+        
+    }
+
+}

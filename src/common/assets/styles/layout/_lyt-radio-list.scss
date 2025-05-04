@@ -1,0 +1,7 @@
+//lyt-radio-list
+.lyt-radio-list{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    gap: rem(20px);
+    justify-content: center;
+}

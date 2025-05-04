@@ -1,0 +1,72 @@
+//mod-product
+.mod-product{
+    $self: &;
+    // width: rem(284px);
+    height: rem(324px);
+    overflow: hidden;
+    position: relative;
+    border-bottom-left-radius: rem(8px);
+    border-bottom-right-radius: rem(8px);
+    width: 100%;
+
+    @include mq-below($md){
+        height: rem(180px);
+    }
+
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            height: rem(220px);
+        }
+    }
+
+    &__title{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+    }
+
+    &__link{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        text-indent: -9999px;
+    }
+
+    &__title-wrap{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background-color: $clr-light;
+        padding: rem(16px) rem(15px);
+        text-align: left;
+    }
+
+    &__svg{
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    &__image{
+        width: 100%;
+        height: 100%;
+        // height: rem(324px);
+        -webkit-clip-path: url(#my-clip-path);
+        clip-path: url(#my-clip-path);
+
+        // @include mq-below($md){
+        //     width: 100%;
+
+        //     // height: rem(180px);
+        // }
+    }
+
+    &__media-wrap{
+        height: 100%;
+    }
+
+}

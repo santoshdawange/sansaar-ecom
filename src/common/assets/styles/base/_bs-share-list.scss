@@ -1,0 +1,101 @@
+//bs-share-list
+.bs-share-list{
+    text-align: center;
+    position: relative;
+
+    &__title{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        color: $clr-dark;
+        font-weight: $font-semi-bold;
+        text-transform: capitalize;
+        margin-block-end: rem(40px);
+
+        @include mq-below($sm){
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+            margin-block-end: rem(24px);
+        }
+    }
+
+    &__list-wrap{
+        display: flex;
+        align-items: center;
+        gap: rem(24px);
+        justify-content: center;
+
+        @include mq-below($sm){
+            gap: rem(64px) rem(18px);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__list-item{
+        height: rem(64px);
+        position: relative;
+        @include mq-below($sm){
+            height: rem(48px);
+        }
+
+    }
+
+    &__share-btn{
+        width: rem(64px);
+        height: rem(64px);
+        &--copy{
+            background-color: $clr-dark;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include mq-below($sm){
+            margin: 0 auto;
+            width: rem(48px);
+            height: rem(48px);
+        }
+    }
+
+    &__alert-text{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        font-weight: $font-regular;
+        position: absolute;
+        bottom: rem(-60px);
+        left: 0;
+        right: 0;
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+
+        @include mq-below($sm){
+            bottom: rem(-34px);
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+
+        &--active{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__label{
+        font-size: $fs-h10;
+        line-height: $lh-h10;
+        text-transform: capitalize;
+        display: inline-block;
+        position: absolute;
+        bottom: rem(-30px);
+        left: 0;
+        right: 0;
+
+        @include mq-below($sm){
+            bottom: rem(-20px);
+        }
+    }
+
+
+}

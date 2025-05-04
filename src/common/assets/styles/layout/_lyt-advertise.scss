@@ -1,0 +1,241 @@
+//lyt-advertise
+.lyt-advertise{
+    $self: &;
+
+    .bs-video{
+        width: auto;
+        // width: 90vw; //old css
+        height: 43vw;
+    }
+
+    &__film-list-wrap{
+        display: flex;
+        flex-direction: column;
+        gap: rem(80px);
+
+        @include mq-below($sm){
+            gap: rem(32px);
+        }
+    }
+
+    &__film-title, &__title{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        margin-block-end: rem(10px);
+        text-align: left;
+
+        @include mq-below($sm){
+            font-size: $fs-h7;
+            line-height: $lh-h7;
+            margin-block-end: rem(6px);
+        }
+    }
+
+    &__cont-wrap{
+
+        //old css starts
+
+        &--typ-col-2{
+            display: flex;
+            // grid-template-columns: 2.4fr 0.6fr;
+            gap: rem(48px);
+            align-items: start;
+            height: 100vh;
+            overflow: visible;
+
+            @include mq-below($sm){
+                display: block;
+                height: auto;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    display: block;
+                    height: auto;
+                }
+            }
+        }
+
+        //old css ends
+
+        &__item{
+
+            @include mq-below($sm){
+                margin-block-end: rem(46px);
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    margin-block-end: rem(46px);
+                }
+            }
+
+            &:last-child{
+                @include mq-below($sm){
+                    margin-block-end: 0;
+                }
+
+                @include mq-between($sm, $md2){
+                    @include orientation(portrait){
+                        margin-block-end: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__logo-list-wrap {
+        position: sticky;
+        top: rem(130px);
+        align-self: flex-start;
+        border-left: 1px solid $clr-dark;
+        padding-inline-start: rem(48px);
+
+        @include mq-below($sm){
+            padding-inline-start: 0;
+            border-left: none;
+            padding-block: rem(20px);
+            margin: 0 rem(-20px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                margin: 0 rem(-50px);
+                padding-inline-start: 0;
+                border-left: none;
+                padding-block: rem(50px);
+            }
+        }
+    }
+
+    &__logo-list-title-wrap{
+        @include mq-below($sm){
+            padding-inline: rem(20px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                padding-inline: rem(50px);
+            }
+        }
+    }
+
+    &__print-list-wrap{
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr); //old css
+        gap: rem(20px); // old css
+
+        // grid-template-columns: repeat(3, 1fr);
+        // gap: rem(46px);
+
+        @include mq-below($sm){
+            // grid-template-columns: repeat(2, 1fr);
+            gap: rem(16px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                // grid-template-columns: repeat(2, 1fr);
+                gap: rem(16px);
+            }
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                // grid-template-columns: repeat(2, 1fr);
+                gap: rem(16px);
+            }
+        }
+    }
+
+    &__logo-list-sticky-wrap{
+        position: sticky;
+        top: rem(200px);
+        z-index: 10;
+        align-self: start;
+    }
+
+    &__logo-image{
+        width: auto;
+        height: rem(30px);
+
+        &--lg-height{
+            height: rem(60px);
+        }
+    }
+
+    &__logo-list{
+        display: flex;
+        flex-direction: column;
+        gap: rem(39px);
+
+        .rfm-initial-child-container{
+            @include mq-below($sm){
+                gap: rem(30px);
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    gap: rem(30px);
+                }
+            }
+        }
+    }
+
+    &__logo-list-title{
+        text-transform: uppercase;
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        text-align: left;
+        padding-block-end: rem(4px);
+        border-bottom: 1px solid $clr-dark;
+        margin-block-end: rem(42px);
+
+        @include mq-below($sm){
+            margin-block-end: rem(12px);
+        }
+    }
+
+    &__title-wrap{
+        @include mq-below($sm){
+            margin-block-end: rem(8px);
+        }
+    }
+
+    &--typ-container-sm{
+        padding: 0 rem(88px);
+
+        @include mq-below($sm){
+            padding: 0;
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                padding: 0;
+            }
+        }
+    }
+
+    .bs-infography{
+        &__media-wrap{
+            
+            @include mq-below($sm){
+                border-radius: rem(15px);
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    height: auto;
+                    aspect-ratio: 16/9;
+                }
+            }
+        }
+    }
+
+    
+
+
+
+}
+

@@ -1,0 +1,209 @@
+//bs-question-list
+.bs-question-list{
+    $self: &;
+
+    &__list-item{
+        margin-block-end: rem(40px);
+    }
+
+    &__question{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        font-weight: $font-semi-bold;
+        color: $clr-dark;
+        margin-block-end: rem(8px);
+        display: block;
+
+        @include mq-below($sm){
+            font-size: $fs-h8;
+            line-height: $fs-h6;
+        }
+    }
+
+    &__answer-wrap{
+        p, a{
+            font-size: $fs-h6;
+            line-height: $fs-h4;
+            font-weight: $font-regular;
+            color: $clr-dark;
+
+            @include mq-below($sm){
+                font-size: $fs-h8;
+                line-height: $fs-h5;
+            }
+        }
+
+        p{
+            margin-block-end: rem(30px);
+            &:last-child{
+                margin-block-end: 0;
+            }
+        }
+
+        a{
+            text-decoration: underline;
+        }
+    }
+
+    &__meta-info{
+        font-size: $fs-h6;
+        line-height: $fs-h4;
+        font-weight: $font-regular;
+        color: $clr-dark;
+        margin-block-start: rem(24px);
+
+        @include mq-below($sm){
+            font-size: $fs-h8;
+            line-height: $fs-h5;
+        }
+    }
+
+    &__feature{
+        gap: rem(60px) !important;
+        margin-block-start: rem(40px);
+        justify-content: space-between !important;
+
+        @include mq-below($sm){
+            gap: rem(24px) rem(16px) !important;
+        }
+
+        &.lyt-features{
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        }
+        
+    }
+
+    &__table-list{
+        margin-block-start: rem(40px);
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: rem(8px);
+            }
+        }
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: rem(8px);
+            }
+        }
+    }
+
+    &__table-row{
+        margin-block-end: rem(8px);
+        &:last-child{
+            margin-block-end: 0;
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                margin-block-end: 0;
+            }
+        }
+    }
+
+    &__table-item{
+        height: rem(92px);
+        border-radius: rem(20px);
+        display: flex;
+        align-items: center;
+        border: 1px solid $clr-dark;
+
+        @include mq-below($sm){
+            flex-direction: column;
+            height: auto;
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                height: 100%;
+            }
+        }
+    }
+
+    &__table-title-wrap{
+        width: rem(480px);
+        text-align: left;
+        position: relative;
+        padding: rem(30px) rem(25px);
+        height: rem(92px);
+        display: flex;
+        align-items: center;
+
+        @include mq-below($sm){
+            width: 100%;
+            padding: rem(20px);
+            height: auto;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            background-color: $clr-dark;
+            height: rem(92px);
+
+            @include mq-below($sm){
+                height: auto;
+                width: 100%;
+                height: 1px;
+                top: auto;
+                left: 0;
+            }
+        }
+
+    }
+
+    &__table-info-wrap{
+        width: calc(100% - rem(480px));
+        text-align: left;
+        padding: 0 rem(25px);
+
+        @include mq-below($sm){
+            width: 100%;
+            padding: rem(20px);
+        }
+
+    }
+
+    &__table-title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        font-weight: $font-semi-bold;
+        color: $clr-dark;
+
+        @include mq-below($sm){
+            font-size: $fs-h7;
+            line-height: $fs-h5;
+        }
+    }
+
+    &__table-info{
+        font-size: $fs-h7;
+        line-height: $fs-h4;
+        font-weight: $font-regular;
+        color: $clr-dark;
+
+        @include mq-below($sm){
+            font-size: $fs-h8;
+            line-height: $fs-h5;
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                font-size: $fs-h9;
+                line-height: $lh-h9;
+            }
+        }
+    }
+
+
+
+}

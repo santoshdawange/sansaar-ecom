@@ -1,0 +1,157 @@
+.cm-overflow-hidden {
+    overflow: hidden;
+}
+
+.cm-title {
+    font-size: $fs-h2;
+    line-height: $lh-h2;
+    font-family: $font2;
+    text-transform: uppercase;
+    margin-block-end: rem(13px);
+}
+
+.cm-line-break {
+    display: block;
+}
+
+.cm-semi-bold {
+    font-weight: $font-semi-bold;
+}
+
+.bg-light {
+    background: $clr-light;
+}
+
+.cm-container {
+    width: calc(100vw - rem(200px));
+    margin: 0 auto;
+
+    @include mq-below($sm){
+        width: 100%;
+        padding: 0 rem(20px);
+    }
+}
+
+.cm-cursive {
+    font-size: $fs-h2;
+    line-height: $lh-h2;
+    font-family: $font3;
+    font-weight: $font-regular;
+    @include mq-below($sm) {
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+    }
+}
+
+.cm-no-padding {
+    padding: 0 !important;
+}
+
+.cm-no-padding-horizontal {
+    padding-inline: 0 !important;
+}
+
+.cm-separator {
+    position: relative;
+    &::after {
+        content: "";
+        width: rem(1191px);
+        height: rem(32px);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: url("../../images/element.svg") no-repeat 0 0 transparent;
+        background-size: cover;
+        @include mq-below($sm) {
+            width: 100%;
+            background-position: center center;
+            transform: scale(0.8);
+            transform-origin: center center;
+            display: none;
+        }
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                background-position: center center;
+                width: auto;
+            }
+        }
+    }
+
+}
+.cm-hidden-md {
+    display: none !important;
+    @include mq-below($md) {
+        display: block !important;
+    }
+}
+
+.cm-hidden-flex-xs {
+    display: inline-flex !important;
+    @include mq-below($sm) {
+        display: none !important;    
+    }
+}
+
+.d-none{
+    display: none !important;
+}
+
+.cm-visible-flex-xs{
+        display: none !important;
+    @include mq-below($sm){
+        display: inline-flex !important;
+    }
+
+    @include mq-between($sm, $lg){
+        @include orientation(portrait){
+            display: inline-flex !important;
+        }
+    }
+}
+
+.cm-font-number{
+    font-family: $font4 !important;
+}
+.cm-pointer{
+    cursor: pointer !important;
+}
+
+.cm-font-number{
+    font-family: $font4 !important;
+}
+
+.cm-text-indent-999{
+    text-indent: -9999px !important;
+}
+
+.cm-bold{
+    font-weight: $font-semi-bold !important;
+}
+
+.cm-underline{
+    text-decoration: underline !important;
+}
+
+.cm-italic{
+    font-style: italic !important;
+}
+
+.cm-font-1{
+    font-family: $font1 !important;
+}
+
+.cm-font-2{
+    font-family: $font2 !important;
+}
+
+.cm-text-bold{
+    font-weight: $font-bold !important;
+}
+
+.cm-align-bottom-end{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

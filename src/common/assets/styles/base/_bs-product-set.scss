@@ -1,0 +1,54 @@
+//bs-product-set
+.bs-product-set{
+    $self: &;
+    background-color: $clr-light;
+    border-radius: rem(24px);
+    padding: rem(40px);
+    text-align: left;
+
+    &__title{
+        font-size: $fs-h2-sm;
+        line-height: $lh-h2-sm;
+        text-transform: uppercase;
+        font-weight: $font-semi-bold;
+    }
+    
+    &__title-wrap{
+        margin-block-end: rem(24px);
+    }
+
+    &__cont-wrap{
+        display: flex;
+        gap: 0 rem(85px);
+    }
+
+    &__set-info{
+        display: flex;
+        align-items: flex-start;
+        gap: 0 rem(84px);
+    }
+
+    &__set-item{
+        width: rem(340px);
+        position: relative;
+
+        &:after{
+            content: '';
+            @include svg-icon("../../images/icons/add-fill.svg", rem(60px), rem(60px));
+            @include background-opacity($clr-grey-3, 1);   
+            position: absolute;
+            top: rem(155px);
+            right: rem(-72px);
+        }
+
+        &:last-child{
+            &::after{
+                display: none;
+            }
+        }
+    }
+
+    &__amount-wrap{
+        flex-grow: 1;
+    }
+}

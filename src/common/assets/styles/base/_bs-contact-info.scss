@@ -1,0 +1,51 @@
+.bs-contact-info {
+    display: flex;
+    @include mq-below($sm) {
+        flex-direction: column;
+    }
+    @include mq-between($sm, $lg){
+        @include orientation(portrait){
+            flex-direction: column;
+        }
+    }
+    &__img-wrap {
+        width: auto;
+        min-height: 100%;
+        flex-grow: 1;
+        max-height: rem(696px);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+    &__info-wrap {
+        padding: rem(80px) rem(100px) rem(100px) rem(70px);
+        border-top: 1px solid $clr-dark;
+        flex-shrink: 0;
+        width: rem(640px);
+        @include mq-below($sm) {
+            width: 100%;
+            padding: rem(40px) rem(16px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                padding: rem(60px) rem(50px);
+            }
+        }
+    }
+    &__desc {
+        color: $clr-dark;
+        font-size: $fs-h5;
+        line-height: normal;
+        margin-block-end: rem(54px);
+        @include mq-below($sm) {
+            font-size: $fs-h7;
+            margin-block-end: rem(16px);
+        }
+        &:last-child {
+            margin-block-end: 0;
+        }
+    }
+}

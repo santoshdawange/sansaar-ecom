@@ -1,0 +1,22 @@
+//bs-message
+.bs-message{
+    $self:&;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    
+    &__image-wrap{
+        width: rem(240px);
+        height: rem(240px);
+    }
+
+    &--visible{
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+}

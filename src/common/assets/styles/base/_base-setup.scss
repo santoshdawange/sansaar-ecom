@@ -1,0 +1,59 @@
+html {
+    font-family: $font1; // 1
+    -ms-text-size-adjust: 100%; // 2
+    -webkit-text-size-adjust: 100%; // 2
+    color: $clr-dark;
+    font-weight: $font-regular;
+    @include scrollbars(
+        rem(0),
+        $clr-grey,
+        rgba(0,0,0,0.1)
+      );
+    scroll-behavior: smooth;
+
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            font-size: 16px;
+        }
+    }
+   
+
+    @include mq-between($sm2, $lg){
+        @include orientation(portrait){
+            font-size: 16px;
+        }
+    }
+
+    
+
+    @include mq-between($md2, $lg){
+        font-size: 9px;
+        @include orientation(portrait){
+            font-size: 14px;
+        }
+    }
+
+    
+
+    @include mq-between($lg, $lg2){
+        font-size: 10.5px;
+    }
+
+    @include mq-between($lg2, $xl){
+        font-size: 11.5px;
+    }
+
+    @include mq-between($xl, $xxl){
+        font-size: 13px;
+    }
+
+    @include mq-between($xxl, $xxxl){
+        font-size: 14px;
+    }
+
+    @include mq-above($xxxl){
+        font-size: 16.5px;
+    }
+
+    
+  }

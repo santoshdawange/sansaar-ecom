@@ -1,0 +1,99 @@
+//lyt-blog-details
+.lyt-blog-details{
+    $self:&;
+
+    &__head-wrap{
+        height: rem(168px);
+        background-color: $clr-light;
+        padding: 0 rem(96px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        @include mq-below($sm) {
+            padding: 0 rem(16px);
+            height: rem(80px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                padding: 0 rem(40px);
+                height: rem(120px);
+            }
+        }
+
+        #{$self}__back-btn{
+            position: absolute;
+            left: rem(96px);
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include mq-below($sm){
+                left: rem(16px);
+                height: rem(30px);
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    left: rem(40px);
+                    height: rem(30px);
+                }
+            }
+        }
+    }
+
+    &__title{
+        font-size: $fs-h1-sm;
+        line-height: $lh-h1-sm;
+        text-transform: uppercase;
+
+        @include mq-below($sm){
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+        }
+
+        
+    }
+
+    &__cont-wrap{
+        padding: rem(96px);
+
+        @include mq-below($sm){
+            padding: rem(20px) rem(16px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                padding: rem(40px);
+            }
+        }
+    }
+
+    &__cont-list-item{
+        margin-block-end: rem(60px);
+
+        @include mq-below($sm){
+            margin-block-end: rem(40px);
+        }
+    }
+
+    &__col-wrap{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(70px);
+
+        @include mq-below($sm){
+            grid-template-columns: repeat(1, 1fr);
+            gap: rem(40px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                grid-template-columns: repeat(1, 1fr);
+                gap: rem(40px);
+            }
+        }
+    }
+
+
+}

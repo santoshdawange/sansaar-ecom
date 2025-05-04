@@ -1,0 +1,100 @@
+//bs-search-results
+.bs-search-results{
+    $self: &;
+
+    &__title{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        font-weight: $font-regular;
+        color: $clr-dark;
+        display: inline-block;
+
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__list-wrap{
+        // width: rem(345px);
+        width: rem(452px);
+        padding-inline-end: rem(107px);
+        overflow-y: auto;
+        height: rem(725px);
+        @include scrollbars(
+            rem(20px),
+            $clr-light,
+            $clr-white-1
+        );
+        scroll-behavior: smooth;
+
+        @include mq-below($md){
+            max-height: initial;
+            padding-inline-end: 0;
+            width: 100%;
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0 rem(24px);
+            }
+        }
+    }
+
+    &__list-item{
+        border-top: 1px solid $clr-dark;
+        padding-block: rem(28px);        
+    }
+
+    &__item-title{
+        font-size: $fs-h7;
+        line-height: $lh-h7;
+        font-weight: $font-semi-bold;
+        text-transform: capitalize;
+        margin-block-end: rem(6px);
+
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__item-time{
+        margin-block: rem(24px);
+        display: block;
+    }
+
+    &__item-distance{
+        font-weight: $font-regular;
+    }
+
+    &__item-time, &__item-distance, &__item-address{
+        @include mq-below($md){
+            font-size: $fs-h9;
+            line-height: $lh-h9;
+        }
+    }
+
+    &__title-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-end: rem(10px);
+    }
+
+    &__icon-link{
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
+
+        #{$self}__title{
+            text-decoration: underline;
+        }
+    }
+
+
+
+}

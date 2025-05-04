@@ -1,0 +1,217 @@
+//bs-tests
+.bs-tests{
+    $self:&;
+
+    &__list-item{
+        padding: rem(85px) rem(96px);
+
+        @include mq-below($sm){
+            padding: rem(40px) rem(20px);
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                padding: rem(60px) rem(50px);
+            }
+        }
+
+        &:nth-child(even){
+            background-color: $clr-light;
+
+            #{$self}__item{
+                flex-direction: row-reverse;
+
+                @include mq-below($sm){
+                    flex-direction: column;
+                }
+
+                @include mq-between($sm2, $md2){
+                    @include orientation(portrait){
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: rem(72px);
+        justify-content: space-between;
+
+        @include mq-below($sm){
+            flex-direction: column;
+            gap: rem(32px);
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                flex-direction: column;
+                gap: rem(32px);
+            }
+        }
+    }
+
+    &__media-wrap{
+        width: rem(850px);
+        height: rem(558px);
+        border-radius: rem(20px);
+        overflow: hidden;
+
+        @include mq-below($sm){
+            width: 100%;
+            height: rem(250px);
+            border-radius: rem(12px);
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                width: 100%;
+            }
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                height: rem(475px);
+            }
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                height: rem(650px);
+            }
+        }
+    }
+
+    &__info-wrap{
+        width: calc(100% - rem(850px));
+        text-align: left;
+
+        @include mq-below($sm){
+            width: 100%;
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                width: 100%;
+            }
+        }
+    }
+
+    &__info{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        margin-block-start: rem(30px);
+        padding-block-start: rem(30px);
+        border-top: 1px solid $clr-dark;
+        // font-weight: $font-regular;
+
+        @include mq-below($sm) {
+            font-size: $fs-h8;
+            line-height: $lh-h6;
+            margin-block-start: rem(12px);
+            padding-block-start: rem(12px);
+        }
+    }
+
+    &__title{
+        font-size: $fs-h1-sm;
+        line-height: $lh-h1-sm;
+        text-transform: uppercase;
+        max-width: 65%;
+
+        @include mq-below($md){
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+            max-width: initial;
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                font-size: $fs-h3;
+                line-height: $lh-h3;
+                max-width: initial;
+            }
+        }
+    }
+
+    &__extra-info{
+        margin-block-start: rem(20px);
+        text-align: center;
+    }
+
+    &__text-sm{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+
+        @include mq-below($sm) {
+            font-size: $fs-h10;
+            line-height: $lh-h10;
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                font-size: $fs-h9;
+                line-height: $lh-h9;
+            }
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                font-size: $fs-h8;
+                line-height: $lh-h8;
+            }
+        }
+    }
+
+    &__label{
+        margin-block-end: rem(15px);
+        display: inline-block;
+    }
+
+    &__test-item-list{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        @include mq-below($sm){
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__test-item{
+        padding: rem(4px);
+        border-color: $clr-dark;
+        border-right: 0.5px solid;
+        border-bottom: 0.5px solid;
+
+        &:nth-child(6n){
+            border-right: none;
+            @include mq-below($sm){
+                border-right: 0.5px solid;
+            }
+        }
+
+        &:nth-last-child(-n+6){
+            border-bottom: none;
+            @include mq-below($sm){
+                border-bottom: 0.5px solid;
+            }
+        }
+
+        &:nth-child(3n){
+            @include mq-below($sm){
+                border-right: none;
+            }
+        }
+
+        &:nth-last-child(-n+3){
+            @include mq-below($sm){
+                border-bottom: none;
+            }
+        }
+    }
+
+
+
+}

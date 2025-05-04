@@ -1,0 +1,46 @@
+//bs-counter-widget
+.bs-counter-widget{
+    $self: &;
+    border: 1px solid $clr-grey-3;
+    border-radius: rem(12px);
+    display: inline-block;
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        padding: rem(9px);
+    }
+
+    &__input{
+        text-align: center;
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        border: none;
+        height: rem(28px);
+        padding: 0 rem(10px);
+        width: 100%;
+    }
+
+    &__icon{
+        transition: all 0.3s ease;
+    }
+
+    &__action-button{
+        height: rem(28px);
+        &:disabled{
+            opacity: 0.5;
+        }
+
+        &:hover{
+            #{$self}__icon{
+                @include background-opacity($clr-dark, 1);   
+            }
+        }
+    }
+
+    &__input-wrap{
+        max-width: rem(85px);
+    }
+
+
+}

@@ -1,0 +1,189 @@
+//bs-challenge
+.bs-challenge{
+    $self: &;
+    display: flex;
+    align-items: flex-start;
+    gap: rem(50px);
+
+    @include mq-below($md){
+        flex-direction: column;
+        gap: rem(32px);
+        margin-block-end: rem(24px);
+    }
+
+    @include mq-between($sm, $lg){
+        @include orientation(portrait){
+            flex-direction: column;
+            gap: rem(32px);
+            margin-block-end: rem(50px);
+        }
+    }
+
+    &__media-wrap{
+        width: rem(1100px);
+        height: rem(658px);
+        border-radius: rem(24px);
+        overflow: hidden;
+
+        @include mq-below($md){
+            width: 100%;
+            height: auto;
+            border-radius: rem(12px);
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                width: 100%;
+                height: auto;
+                border-radius: rem(24px);
+            }
+        }
+
+        #{$self}__image{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__info-wrap{
+        width: calc(100% - rem(1150px));
+        @include mq-below($md){
+            width: 100%;
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                width: 100%;
+            }
+        }
+    }
+
+    &__info-title{
+        font-size: $fs-h1-sm;
+        line-height: $lh-h1-sm;
+        text-transform: uppercase;
+        max-width: 85%;
+        margin-block-end: rem(20px);
+
+        @include mq-below($md){
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+            max-width: initial;
+            margin-block-end: rem(18px);
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                font-size: $fs-h2;
+                line-height: $lh-h2;
+            }
+        }
+    }
+
+    &__info-desc{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+
+        @include mq-below($md){
+            font-size: $fs-h8;
+            line-height: $lh-h8;
+        }
+    }
+
+    &__title-wrap{
+        padding-block-end: rem(50px);
+        border-bottom: 1px solid $clr-dark;
+        text-align: left;
+        @include mq-below($md){
+            padding-block-end: rem(32px);
+            text-align: center;
+        }
+
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                text-align: center;
+            }
+        }
+    }
+
+    &__feature-list{
+        display: flex;
+        align-items: flex-start;
+        gap: rem(90px);
+        margin-block-start: rem(-24px);
+
+        @include mq-below($md){
+            margin-block-start: 0;
+            gap: rem(50px);
+            justify-content: space-between;
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                justify-content: center;
+                gap: rem(50px);
+            }
+        }
+        
+    }
+
+    &__feature-item{
+        position: relative;
+
+        &:last-child{
+            .mod-icon-text{
+                &__label{
+                    width: 80%;
+                    @include mq-below($md){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__feature{
+
+        &.mod-icon-text{
+            width: auto !important;
+
+            @include mq-between($sm, $lg){
+                @include orientation(portrait){
+                    max-width: rem(220px);
+                }
+            }
+        }
+
+        .mod-icon-text{
+            &__icon{
+                width: rem(259px) !important;
+                height: rem(259px) !important;
+
+                @include mq-below($md){
+                    width: rem(112px) !important;
+                    height: rem(112px) !important;
+                }
+            }
+
+            &__label{
+                font-size: $fs-h9;
+                line-height: $lh-h9;
+                position: absolute;
+                top: rem(220px);
+                left: 0;
+                right: 0;
+
+                @include mq-below($md){
+                    font-size: $fs-h11;
+                    line-height: $fs-h9;
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    right: auto;
+                }
+            }
+        }
+    }
+
+
+}

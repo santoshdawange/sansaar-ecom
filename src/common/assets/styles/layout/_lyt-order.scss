@@ -1,0 +1,21 @@
+//lyt-order
+.lyt-order{
+    $self:&;
+
+    &__title{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        text-transform: uppercase;
+    }
+
+    &__header{
+        margin-block-end: rem(44px);
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: rem(32px);
+    }
+
+}

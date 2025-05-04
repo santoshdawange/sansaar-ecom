@@ -1,0 +1,277 @@
+//bs-tabs
+.bs-tabs{
+    $self: &;
+
+    &__nav-wrap{
+        background-color: $clr-light;
+        margin: 0 rem(-165px);
+        padding: rem(50px) rem(165px);
+
+        @include mq-below($md){
+            margin: 0 rem(-20px);
+            padding: rem(20px) rem(20px);
+            position: sticky;
+            top: rem(74px);
+            z-index: 5;
+        }
+    }
+
+    &__nav-item{
+        font-size: $fs-h5 !important;
+        line-height: $lh-h5 !important;
+        text-transform: capitalize !important;
+        color: $clr-dark !important;
+        font-family: $font1 !important;
+        font-weight: $font-regular !important;
+        min-width: rem(160px) !important;
+        padding-inline: 0 !important;
+
+        @include mq-below($md){
+            font-size: $fs-h7 !important;
+            line-height: $lh-h7 !important;
+            min-width: rem(130px) !important;
+        }
+
+        &.Mui-selected{
+            font-weight: $font-bold !important;
+        }
+    }
+
+    .MuiTabs-flexContainer{
+        gap: rem(60px);
+        @include mq-below($md){
+            gap: rem(30px);
+        }
+    }
+
+    .MuiTabs-indicator{
+        background-color: $clr-dark !important;
+    }
+
+    &__cont{
+        .MuiBox-root{
+            padding: 0;
+        }
+    }
+
+    &--typ-white{
+
+        .MuiTabs-flexContainer{
+            gap: rem(120px);
+            justify-content: center;
+
+            @include mq-below($sm){
+                gap: 0 rem(30px);
+                justify-content: initial;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    gap: 0 rem(40px);
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: center;
+                }
+            }
+
+            
+        }
+
+        .MuiTabScrollButton-root{
+            svg{
+                path{
+                    fill: $clr-white;
+                }
+            }
+        }
+
+        .MuiTabs-indicator{
+            display: none;
+        }
+
+        #{$self}__nav{
+            // min-height: initial;
+            // display: block;
+
+            @include mq-below($sm){
+                // margin: 0 rem(-20px);
+                width: auto;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                // margin: 0 rem(-20px);
+                width: auto;
+                }
+            }
+        }
+
+        // #{$self}__select{
+        //     display: none;
+
+        //     .MuiInputBase-root{
+        //         width: 100%;
+        //         border-radius: rem(12px) !important;
+
+        //         .MuiOutlinedInput-notchedOutline{
+        //             border-color: $clr-white;
+        //         }
+        //     }
+
+        //     .MuiSelect-select{
+        //         padding-block: rem(10px);
+        //         text-align: left;
+
+        //         @include mq-below($sm){
+        //             color: $clr-white;
+        //         }
+
+        //         @include mq-between($sm, $md2){
+        //             @include orientation(portrait){
+        //                 color: $clr-white;
+        //             }
+        //         }
+
+                
+        //     }
+
+        //     .MuiSelect-icon{
+        //         color: $clr-white;
+        //     }
+
+
+
+        //     // @include mq-below($sm){
+        //     //     display: block;
+        //     // }
+
+        //     // @include mq-between($sm, $md2){
+        //     //     @include orientation(portrait){
+        //     //         display: block;
+        //     //     }
+        //     // }
+            
+        // }
+
+        #{$self}__nav-wrap{
+            margin: 0;
+            padding: 0 0 rem(18px) 0;
+            background-color: transparent;
+            margin-top: rem(-30px);
+
+
+            @include mq-below($sm){
+                padding: 0 rem(20px);
+                margin: 0 rem(-20px);
+                background-color: $clr-light;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    padding: 0;
+                    margin-top: rem(-60px);
+                    background-color: transparent;
+                }
+            }
+        }
+
+        #{$self}__nav-item{
+            // padding: 0;
+            // min-height: initial;
+            font-size: $fs-h7 !important;
+            line-height: $lh-h7 !important;
+            color: $clr-white !important;
+            text-transform: uppercase !important;
+            // min-width: rem(220px) !important;
+
+            @include mq-below($sm){
+                min-width: max-content !important;
+                color: $clr-dark !important;
+                padding: rem(20px) 0;
+                display: block;
+                max-width: initial;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid $clr-light-2;
+            }
+
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    min-width: max-content !important;
+                    color: $clr-white !important;
+                    padding: rem(20px) 0;
+                    width: auto;
+                    border: none;
+                }
+            }
+
+            &:last-child{
+                @include mq-below($sm){
+                    border-bottom: none;
+                }
+            }
+
+
+        }
+
+
+
+    }
+
+    &__data-count{
+        font-size: $fs-h4;
+        line-height: $lh-h4;
+        color: $clr-pallet-5;
+        font-weight: $font-regular;
+    }
+
+    &--typ-cart{
+        .MuiTabs-flexContainer{
+            justify-content: center;
+        }
+
+        #{$self}__nav-wrap{
+            background-color: transparent;
+            padding: 0;
+            margin-block-end: rem(24px);
+        }
+
+        #{$self}__nav-text{
+            font-size: $fs-h3 !important;
+            line-height: $lh-h3 !important;
+            text-transform: uppercase !important;
+            font-weight: $font-medium !important;
+            transition: all 0.3s ease;
+            padding: rem(16px) rem(53px);
+
+        }
+
+        #{$self}__nav-item{
+            &.Mui-selected{
+                #{$self}__nav-text{
+                    font-weight: $font-bold !important;
+                }
+            }
+        }
+
+        &#{$self}--typ-nav-start{
+            .MuiTabs-flexContainer{
+                justify-content: flex-start;
+            }
+
+            #{$self}__nav-wrap{
+                margin: 0;
+            }
+
+            .MuiTabs-root{
+                border-bottom: 1px solid $clr-border;
+            }
+        }
+
+        
+    }
+
+
+}

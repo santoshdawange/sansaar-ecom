@@ -1,0 +1,55 @@
+//lyt-instafeed
+.lyt-instafeed{
+    $self:&;
+
+    &__wrap{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(46px);
+
+        @include mq-below($sm){
+            grid-template-columns: repeat(1, 1fr);
+            gap: rem(16px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                gap: rem(16px);
+            }
+        }
+    }
+
+    &__tile{
+        border-radius: rem(20px) !important;
+        overflow: hidden;
+        border: 1px solid $clr-dark;
+        max-height: rem(656px);
+        height: 100%;
+
+        @include mq-below($sm){
+            max-height: rem(500px);
+        }
+
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                max-height: rem(575px);
+            }
+        }
+    }
+
+    .bs-info-tile__image-wrap{
+        height: rem(450px);
+
+        @include mq-below($sm){
+            max-height: rem(270px);
+        }
+    }
+
+
+}

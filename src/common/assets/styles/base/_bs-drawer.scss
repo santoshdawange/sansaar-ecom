@@ -1,0 +1,79 @@
+//bs-drawer
+.bs-drawer{
+    $self: &;
+
+    .MuiPaper-root{
+        width: 52%;
+    }
+
+    &__amount-wrap-title{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        text-transform: uppercase;
+        margin-block-end: rem(4px);
+        color: $clr-dark;
+        display: block;
+    }
+
+    &__amount{
+        font-size: $fs-h2;
+        line-height: $lh-h2;
+        color: $clr-dark;
+    }
+
+    &__amount-info-text{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        color: $clr-grey-3;
+    }
+
+    &--typ-cart{
+        position: relative;
+        .MuiPaper-root{
+            top: rem(150px);
+            height: calc(100vh - rem(150px));
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bs-message{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+    }
+
+    &__foot-wrap{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: $clr-white;
+        padding: rem(28px) rem(90px);
+        border-top:1px solid $clr-grey-3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__cont-wrap{
+        flex-grow: 1;
+        // padding: 0 rem(84px);
+        padding: 0 rem(64px);
+    }
+
+    &__action-wrap{
+        width: rem(400px);
+    }
+
+    .lyt-cart-list{
+        max-height: 56.75vh;
+        overflow-y: auto;
+    }
+
+
+
+}

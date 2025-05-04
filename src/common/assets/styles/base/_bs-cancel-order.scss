@@ -1,0 +1,31 @@
+//bs-cancel-order
+.bs-cancel-order{
+    $self:&;
+
+    &__head-wrap{
+        text-align: center;
+        margin-block-end: rem(66px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(12px);
+    }
+
+    &__title{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+    }
+
+    &__order-info{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: capitalize;
+
+        &--bold{
+            font-weight: $font-semi-bold;
+        }
+    }
+
+}

@@ -1,0 +1,20 @@
+//bs-profile-menu
+.bs-profile-menu{
+    $self:&;
+
+    &__profile-title{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        text-transform: capitalize;
+        font-weight: $font-bold;
+        padding: rem(32px) rem(12px);
+    }
+
+    &__menu-list{
+        display: flex;
+        flex-direction: column;
+        gap: rem(10px);
+    }
+
+
+}

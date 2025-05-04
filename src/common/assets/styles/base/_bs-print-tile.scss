@@ -1,0 +1,50 @@
+//bs-print-tile
+.bs-print-tile{
+    $self:&;
+    // height: rem(650px);
+    height: rem(850px);
+    position: relative;
+    border: 1px solid $clr-dark;
+    border-radius: rem(20px);
+    overflow: hidden;
+
+    @include mq-below($sm){
+        height: rem(250px);
+        border-radius: rem(12px);
+    }
+
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            height: rem(540px);
+        }
+    }
+
+    &__image-wrap{
+        transition: all 1s ease;
+        width: 100%;
+        height: 100%;
+
+        img{
+            object-fit: contain;
+        }
+    }
+
+    &__link{
+        text-indent: -9999px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+
+        &:hover{
+            + #{$self}__image-wrap{
+                transform: scale(1.05);
+            }
+        }
+    }
+
+
+
+}

@@ -1,0 +1,30 @@
+//mod-profile
+.mod-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image-wrap{
+        width: rem(205px);
+        height: rem(205px);
+        border-radius: 100%;
+        overflow: hidden;
+        margin-block-end: rem(10px);
+    }
+
+    &__name{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        font-weight: $font-semi-bold;
+        text-transform: capitalize;
+    }
+
+    &__designantion{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        font-weight: $font-thin;
+        text-transform: capitalize;
+    }
+
+
+}

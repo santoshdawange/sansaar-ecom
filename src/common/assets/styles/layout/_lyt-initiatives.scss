@@ -1,0 +1,137 @@
+//lyt-initiatives
+.lyt-initiatives{
+    $self:&;
+    padding: 0;
+
+    &__title{
+        margin-block-end: rem(30px) !important;
+    }
+
+    &__head{
+        max-width: rem(1100px);
+        margin: 0 auto;
+        padding-block-start: rem(50px);
+        padding-block-end: rem(66px);
+
+        @include mq-below($md){
+            padding: rem(40px) rem(20px);
+        }
+    }
+
+    &__body{
+        padding: rem(60px) rem(96px);
+        background-color: $clr-light;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: rem(168px);
+        justify-content: space-between;
+
+        @include mq-below($md){
+            padding: rem(40px) rem(20px);
+            grid-template-columns: 1fr;
+            gap: rem(32px) 0;
+        }
+
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                grid-template-columns: 1fr;
+                gap: rem(60px) 0;
+            }
+        }
+    }
+
+    &__info-title{
+        font-size: $fs-h3;
+        line-height: $lh-h3;
+        color: $clr-dark;
+        text-transform: capitalize;
+        padding-block-end: rem(16px);
+        border-bottom: 1px solid $clr-dark;
+        text-align: left;
+
+        @include mq-below($md){
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+            padding-block-end: rem(12px);
+        }
+    }
+
+    &__info-item{
+        padding-block-start: rem(36px);
+    }
+
+    &__info-wrap{
+        &--typ-lg{
+            #{$self}__info-list{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0 rem(70px);
+                @include mq-below($md){
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 0;
+                }
+
+                @include mq-between($sm, $lg){
+                    @include orientation(portrait){
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: rem(24px);
+                    }
+                }
+            }
+        }
+    }
+
+    &__info-list{
+        @include mq-between($sm, $lg){
+            @include orientation(portrait){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: rem(24px);
+            }
+        }
+    }
+
+
+    .mod-icon-text{
+        $self: &;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        gap: rem(20px);
+
+        &__label{
+            font-size: $fs-h7;
+            line-height: $lh-h6;
+            text-align: left;
+            width: calc(100% - rem(190px));
+
+            @include mq-below($md){
+                width: calc(100% - rem(100px));
+                font-size: $fs-h9;
+                line-height: $lh-h9;
+            }
+        }
+
+        &__icon{
+            width: rem(150px) !important;
+            height: rem(150px) !important;
+
+            @include mq-below($md){
+                width: rem(70px) !important;
+                height: rem(70px) !important;
+            }
+
+            @include mq-between($sm, $lg){
+                @include orientation(portrait){
+                    width: rem(100px) !important;
+                    height: rem(100px) !important;
+                }
+            }
+        }
+
+
+    }
+
+
+}

@@ -1,0 +1,65 @@
+//bs-accordion
+.bs-accordion{
+    $self: &;
+
+    &__item{
+        background-color: transparent !important;
+        box-shadow: none !important;
+
+        &:before{
+            display: none !important;
+        }
+
+        .MuiAccordionSummary-content{
+            flex-grow: initial !important;
+            -webkit-flex-grow: initial !important;
+        }
+
+        &.Mui-expanded{
+            margin: 0 !important;
+        }
+    }
+
+    &__title{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        font-weight: $font-medium;
+        color: $clr-dark;
+
+        @include mq-below($sm){
+            font-size: $fs-h6;
+            line-height: $lh-h6;
+        }
+    }
+
+    &__icon{
+        width: rem(25px) !important;
+        height: rem(25px) !important;
+    }
+
+    &__item-title-wrap{
+        gap: rem(10px);
+        transition: all 0.3s ease;
+        border-radius: rem(15px) !important;
+
+        &:hover{
+            @include background-opacity($clr-dark, 0.05);
+        }
+
+
+        .MuiAccordionSummary-content{
+            margin: rem(16px) 0 !important;
+
+            &.Mui-expanded{
+                margin: rem(16px) 0 !important;
+            }
+        }
+    }
+
+    &__item-cont-wrap{
+        padding: rem(30px) 0 !important;
+    }
+
+
+
+}

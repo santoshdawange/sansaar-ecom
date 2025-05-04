@@ -1,0 +1,15 @@
+//lyt-cart
+.lyt-cart-list{
+    $self: &;
+
+    &__list-item{
+        padding: rem(40px) 0;
+        border-bottom: 1px solid $clr-border;
+
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+
+
+}

@@ -1,0 +1,21 @@
+//lyt-cart
+.lyt-cart{
+    $self:&;
+    display: flex;
+    gap: 0 rem(88px);
+
+    &__tabs-wrap{
+        flex-grow: 1;
+    }
+
+    &__summary-wrap{
+        width: rem(530px);
+    }
+
+    &__summary-item-wrap{
+        display: flex;
+        flex-direction: column;
+        gap: rem(26px) 0;
+    }
+
+}

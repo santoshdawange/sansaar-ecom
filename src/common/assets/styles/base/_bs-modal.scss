@@ -1,0 +1,196 @@
+//bs-modal
+.bs-modal{
+    $self:&;
+
+    .MuiBackdrop-root{
+        backdrop-filter: blur(10px);
+    }
+
+    &__close{
+        position: absolute;
+        right: rem(30px);
+        top: rem(30px);
+        z-index: 3;
+
+        @include mq-below($sm){
+            right: rem(20px);
+            top: rem(20px);
+        }
+
+        .icon{
+            width: rem(50px);
+            height: rem(50px);
+            background-color: $clr-light;
+
+            @include mq-below($sm){
+                width: rem(30px);
+                height: rem(30px);
+            }
+        }
+    }
+
+    &__video{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+
+        @include mq-below($sm){
+            width: 90vw;
+            height: 60vw;
+        }
+    }
+
+    &--typ-video{
+        #{$self}__wrapper{
+            border-radius: rem(30px);
+            background-color: $clr-white;
+            width: 80vw;
+            overflow: hidden;
+
+            @include mq-below($sm){
+                width: 90vw;
+                height: 60vw;
+                border-radius: rem(15px);
+            }
+        }
+
+        #{$self}__content{
+            display: flex;
+        }
+    }
+
+    &--typ-sm{
+        #{$self}__wrapper{
+            width: rem(580px);
+            border-radius: rem(16px);
+            background-color: $clr-white;
+            padding: rem(90px) rem(60px);
+
+            @include mq-below($sm){
+                width: 90vw;
+                padding: rem(45px) rem(30px);
+            }
+        }
+
+        #{$self}__close{
+            .icon{
+                width: rem(26px);
+                height: rem(26px);
+                background-color: $clr-dark;
+            }
+        }
+    }
+
+    &--typ-form{
+        #{$self}__wrapper{
+            width: rem(720px);
+            border-radius: rem(40px);
+            background-color: $clr-white;
+            padding: rem(45px) 0 0 0;
+
+            @include mq-below($sm){
+                width: 90vw;
+                padding: rem(45px) rem(30px);
+            }
+        }
+
+        #{$self}__logo{
+            max-width: rem(225px);
+            display: inline-block;
+            margin-block-end: rem(30px);
+        }
+    
+        #{$self}__title{
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+            text-transform: uppercase;
+            font-weight: $font-bold;
+
+            &--typ-sm-regular{
+                font-size: $fs-h4;
+                line-height: $lh-h4;
+                font-weight: $font-regular;
+            }
+        }
+
+        #{$self}__head-wrap{
+            text-align: center;
+        }
+
+        #{$self}__content{
+            padding: rem(20px) rem(70px);
+            border-bottom: 1px solid $clr-border;
+        }
+
+        #{$self}__footer-wrap{
+            padding: rem(20px) rem(70px);
+            display: flex;
+            flex-direction: column;
+            gap: rem(20px) 0;
+
+            .bs-btn{
+                padding: rem(16px) rem(28px);
+            }
+        }
+
+        
+    }
+
+    &--typ-select-address{
+        #{$self}__wrapper{
+            width: rem(720px);
+            border-radius: rem(20px);
+            background-color: $clr-white;
+            padding: rem(40px);
+
+            @include mq-below($sm){
+                width: 90vw;
+                padding: rem(45px) rem(30px);
+            }
+        }
+
+        #{$self}__logo{
+            max-width: rem(225px);
+            display: inline-block;
+            margin-block-end: rem(30px);
+        }
+    
+        #{$self}__title{
+            font-size: $fs-h4;
+            line-height: $lh-h4;
+            font-weight: $font-regular;
+            text-transform: uppercase;
+        }
+
+        #{$self}__head-wrap{
+            text-align: left;
+            margin-block-end: rem(24px);
+        }
+
+        #{$self}__content{
+            padding: rem(40px) rem(70px);
+            border-bottom: 1px solid $clr-border;
+        }
+
+        #{$self}__footer-wrap{
+            padding: rem(40px) rem(70px);
+            display: flex;
+            flex-direction: column;
+            gap: rem(20px) 0;
+        }
+
+    }
+
+    &--typ-order-cancel{
+        #{$self}__wrapper{
+            padding-block-start: 0;
+        }
+        
+        #{$self}__content{
+            border-bottom: none;
+        }
+        
+    }
+
+
+}

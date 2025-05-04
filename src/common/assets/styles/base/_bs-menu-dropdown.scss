@@ -1,0 +1,22 @@
+//bs-menu-dropdown
+.bs-menu-dropdown{
+
+    .MuiMenuItem-root{
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        color: $clr-dark;
+
+        &:hover{
+            background-color: $clr-light;
+        }
+
+        &.Mui-selected{
+            background-color: $clr-dark;
+            color: $clr-white;
+            &:hover{
+                background-color: $clr-dark;
+            }
+        }
+    }
+
+}

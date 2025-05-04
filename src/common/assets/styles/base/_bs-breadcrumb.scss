@@ -1,0 +1,40 @@
+.bs-breadcrumb {
+    padding-block-start: rem(45px);
+    @include mq-below($sm) {
+        padding-block-start: rem(24px);
+    }
+    &__list {
+        display: flex;
+        border: 1px solid $clr-dark;
+        padding: rem(4px) rem(13px);
+        border-radius: rem(4px);
+    }
+    &__item {
+        margin-inline-end: rem(60px);
+        padding-inline-start: rem(9px);
+        position: relative;
+        @include mq-below($sm) {
+            margin-inline-end: rem(16px);
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: rem(5px) solid transparent;
+            border-top: rem(5px) solid transparent;
+            border-bottom: rem(5px) solid transparent;
+            border-left: rem(5px) solid $clr-dark;
+        }
+    }
+    &__link {
+        color: $clr-dark;
+        font-size: $fs-h10;
+        font-weight: normal;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+}

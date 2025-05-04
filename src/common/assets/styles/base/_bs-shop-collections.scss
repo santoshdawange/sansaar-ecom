@@ -1,0 +1,91 @@
+//bs-shop-collections
+.bs-shop-collections{
+    $self: &;
+    margin-block-end: rem(80px);
+    padding-block-start: rem(60px);
+
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px) 0;
+        align-items: center;
+        position: relative;
+
+        &:hover{
+
+            #{$self}__image{
+                transform: scale(1.2);
+            }
+        }
+
+        #{$self}__link{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+
+    &__media-wrap{
+        width: 100%;
+        height: rem(630px);
+        overflow: hidden;
+        border-radius: rem(16px);
+    }
+
+    &__swiper-slide{
+        max-width: rem(480px);
+    }
+
+    &__swiper-container{
+        padding-inline: rem(96px) !important;
+    }
+
+    &__title{
+        display: flex;
+        align-items: center;
+        gap: 0 rem(15px);
+
+        #{$self}__text{
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+            font-family: $font2;
+            text-transform: uppercase;
+        }
+    }
+
+    &__image{
+        transition: all 0.8s ease;
+    }
+
+    .swiper-button-prev, .swiper-button-next{
+        top: rem(-66px);
+        bottom: auto;
+        left: auto;
+        &:after{
+            display: none;
+        }
+    }
+
+    .swiper-button-prev{
+        @include svg-icon("../../images/icons/slide-left.svg", rem(56px), rem(56px));
+        @include background-opacity($clr-dark, 1);  
+        right: rem(186px);
+    }
+
+    .swiper-button-next{
+        @include svg-icon("../../images/icons/slide-right.svg", rem(56px), rem(56px));
+        @include background-opacity($clr-dark, 1); 
+        right: rem(96px);
+        
+    }
+
+    #{$self}__swiper-container{
+        overflow: visible;
+    }
+
+
+
+}

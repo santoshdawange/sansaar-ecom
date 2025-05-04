@@ -1,0 +1,39 @@
+//bs-custom-input
+.bs-custom-input{
+    $self: &;
+    max-width: rem(480px);
+
+    &__helpertext{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        color: $clr-light-5;
+        margin-block-start: rem(16px);
+    }
+
+    &__field{
+        width: 100%;
+        border-radius: rem(16px) !important;
+
+        &.Mui-focused{
+            .MuiOutlinedInput-notchedOutline{
+                border-color: $clr-dark-1 !important;
+            }
+        }
+
+        .MuiInputBase-input{
+            font-size: $fs-h5;
+            line-height: $lh-h5;
+        }
+
+        .MuiOutlinedInput-notchedOutline{
+            border-color: $clr-dark;
+
+            legend{
+                display: none;
+            }
+
+        }
+    }
+
+
+}

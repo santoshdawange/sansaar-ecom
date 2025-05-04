@@ -1,0 +1,206 @@
+import React, {useState} from 'react';
+import { AdvancedImage } from '@cloudinary/react';
+import { Cloudinary } from "@cloudinary/url-gen";
+import IconText from '../../../../../common/components/IconText';
+import { inrFormat } from '@common/utils/formatCurrency';
+import { Link } from 'react-router-dom';
+import {Box, Modal} from '@mui/material';
+import Share from '../../../../../common/components/Share';
+import { format } from '@cloudinary/url-gen/actions/delivery';
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+};
+
+
+function Detail({data, materialData}) {
+    const cld = new Cloudinary({
+        secure: true,
+        cloud: {
+            cloudName: 'dci1aiukm'
+        }
+    });
+    const imgSrc = cld.image(materialData?.skuImageUrl).quality('auto').delivery(format('webp'));
+
+    const [shareOptionModal, setShareOptionModal] = useState(false);
+
+    const handleOpenShareOptionModal = () => {
+            setShareOptionModal(true)
+    }
+
+    const handleCloseShareOptionModal = () => {
+        setShareOptionModal(false)
+    }
+
+  return (
+    <>
+        <div className='bs-sku-detail'>
+            <div className='bs-sku-detail__media-wrap'>
+                <svg className="bs-sku-detail__svg">
+                    <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox"><path d="M0.978,0.095 L0.996,0.076 C1,0.071,1,0.063,0.996,0.059 L0.969,0.031 L0.941,0.004 C0.937,-0.001,0.929,-0.001,0.924,0.004 L0.905,0.022 C0.901,0.027,0.893,0.027,0.888,0.022 L0.869,0.004 C0.865,-0.001,0.857,-0.001,0.852,0.004 L0.833,0.022 C0.828,0.027,0.821,0.027,0.816,0.022 L0.797,0.004 C0.792,-0.001,0.785,-0.001,0.78,0.004 L0.761,0.022 C0.756,0.027,0.749,0.027,0.744,0.022 L0.725,0.004 C0.72,-0.001,0.713,-0.001,0.708,0.004 L0.689,0.022 C0.684,0.027,0.677,0.027,0.672,0.022 L0.653,0.004 C0.648,-0.001,0.64,-0.001,0.636,0.004 L0.617,0.022 C0.612,0.027,0.604,0.027,0.6,0.022 L0.581,0.004 C0.576,-0.001,0.568,-0.001,0.564,0.004 L0.545,0.022 C0.54,0.027,0.532,0.027,0.527,0.022 L0.509,0.004 C0.504,-0.001,0.496,-0.001,0.491,0.004 L0.472,0.022 C0.468,0.027,0.46,0.027,0.455,0.022 L0.436,0.004 C0.432,-0.001,0.424,-0.001,0.419,0.004 L0.4,0.022 C0.396,0.027,0.388,0.027,0.383,0.022 L0.364,0.004 C0.36,-0.001,0.352,-0.001,0.347,0.004 L0.328,0.022 C0.323,0.027,0.316,0.027,0.311,0.022 L0.292,0.004 C0.287,-0.001,0.28,-0.001,0.275,0.004 L0.256,0.022 C0.251,0.027,0.244,0.027,0.239,0.022 L0.22,0.004 C0.215,-0.001,0.208,-0.001,0.203,0.004 L0.184,0.022 C0.179,0.027,0.172,0.027,0.167,0.022 L0.148,0.004 C0.143,-0.001,0.135,-0.001,0.131,0.004 L0.112,0.022 C0.107,0.027,0.099,0.027,0.095,0.022 L0.076,0.004 C0.071,-0.001,0.063,-0.001,0.059,0.004 L0.031,0.031 L0.004,0.059 C-0.001,0.063,-0.001,0.071,0.004,0.076 L0.022,0.095 C0.027,0.099,0.027,0.107,0.022,0.112 L0.004,0.131 C-0.001,0.135,-0.001,0.143,0.004,0.148 L0.022,0.167 C0.027,0.172,0.027,0.179,0.022,0.184 L0.004,0.203 C-0.001,0.208,-0.001,0.215,0.004,0.22 L0.022,0.239 C0.027,0.244,0.027,0.251,0.022,0.256 L0.004,0.275 C-0.001,0.28,-0.001,0.287,0.004,0.292 L0.022,0.311 C0.027,0.316,0.027,0.323,0.022,0.328 L0.004,0.347 C-0.001,0.352,-0.001,0.36,0.004,0.364 L0.022,0.383 C0.027,0.388,0.027,0.396,0.022,0.4 L0.004,0.419 C-0.001,0.424,-0.001,0.432,0.004,0.436 L0.022,0.455 C0.027,0.46,0.027,0.468,0.022,0.472 L0.004,0.491 C-0.001,0.496,-0.001,0.504,0.004,0.509 L0.022,0.527 C0.027,0.532,0.027,0.54,0.022,0.545 L0.004,0.564 C-0.001,0.568,-0.001,0.576,0.004,0.581 L0.022,0.6 C0.027,0.604,0.027,0.612,0.022,0.617 L0.004,0.636 C-0.001,0.64,-0.001,0.648,0.004,0.653 L0.022,0.672 C0.027,0.677,0.027,0.684,0.022,0.689 L0.004,0.708 C-0.001,0.713,-0.001,0.72,0.004,0.725 L0.022,0.744 C0.027,0.749,0.027,0.756,0.022,0.761 L0.004,0.78 C-0.001,0.785,-0.001,0.792,0.004,0.797 L0.022,0.816 C0.027,0.821,0.027,0.828,0.022,0.833 L0.004,0.852 C-0.001,0.857,-0.001,0.865,0.004,0.869 L0.022,0.888 C0.027,0.893,0.027,0.901,0.022,0.905 L0.004,0.924 C-0.001,0.929,-0.001,0.937,0.004,0.941 L0.031,0.969 L0.059,0.996 C0.063,1,0.071,1,0.076,0.996 L0.095,0.978 C0.099,0.973,0.107,0.973,0.112,0.978 L0.131,0.996 C0.135,1,0.143,1,0.148,0.996 L0.167,0.978 C0.172,0.973,0.179,0.973,0.184,0.978 L0.203,0.996 C0.208,1,0.215,1,0.22,0.996 L0.239,0.978 C0.244,0.973,0.251,0.973,0.256,0.978 L0.275,0.996 C0.28,1,0.287,1,0.292,0.996 L0.311,0.978 C0.316,0.973,0.323,0.973,0.328,0.978 L0.347,0.996 C0.352,1,0.36,1,0.364,0.996 L0.383,0.978 C0.388,0.973,0.396,0.973,0.4,0.978 L0.419,0.996 C0.424,1,0.432,1,0.436,0.996 L0.455,0.978 C0.46,0.973,0.468,0.973,0.472,0.978 L0.491,0.996 C0.496,1,0.504,1,0.509,0.996 L0.527,0.978 C0.532,0.973,0.54,0.973,0.545,0.978 L0.564,0.996 C0.568,1,0.576,1,0.581,0.996 L0.6,0.978 C0.604,0.973,0.612,0.973,0.617,0.978 L0.636,0.996 C0.64,1,0.648,1,0.653,0.996 L0.672,0.978 C0.677,0.973,0.684,0.973,0.689,0.978 L0.708,0.996 C0.713,1,0.72,1,0.725,0.996 L0.744,0.978 C0.749,0.973,0.756,0.973,0.761,0.978 L0.78,0.996 C0.785,1,0.792,1,0.797,0.996 L0.816,0.978 C0.821,0.973,0.828,0.973,0.833,0.978 L0.852,0.996 C0.857,1,0.865,1,0.869,0.996 L0.888,0.978 C0.893,0.973,0.901,0.973,0.905,0.978 L0.924,0.996 C0.929,1,0.937,1,0.941,0.996 L0.969,0.969 L0.996,0.941 C1,0.937,1,0.929,0.996,0.924 L0.978,0.905 C0.973,0.901,0.973,0.893,0.978,0.888 L0.996,0.869 C1,0.865,1,0.857,0.996,0.852 L0.978,0.833 C0.973,0.828,0.973,0.821,0.978,0.816 L0.996,0.797 C1,0.792,1,0.785,0.996,0.78 L0.978,0.761 C0.973,0.756,0.973,0.749,0.978,0.744 L0.996,0.725 C1,0.72,1,0.713,0.996,0.708 L0.978,0.689 C0.973,0.684,0.973,0.677,0.978,0.672 L0.996,0.653 C1,0.648,1,0.64,0.996,0.636 L0.978,0.617 C0.973,0.612,0.973,0.604,0.978,0.6 L0.996,0.581 C1,0.576,1,0.568,0.996,0.564 L0.978,0.545 C0.973,0.54,0.973,0.532,0.978,0.527 L0.996,0.509 C1,0.504,1,0.496,0.996,0.491 L0.978,0.472 C0.973,0.468,0.973,0.46,0.978,0.455 L0.996,0.436 C1,0.432,1,0.424,0.996,0.419 L0.978,0.4 C0.973,0.396,0.973,0.388,0.978,0.383 L0.996,0.364 C1,0.36,1,0.352,0.996,0.347 L0.978,0.328 C0.973,0.323,0.973,0.316,0.978,0.311 L0.996,0.292 C1,0.287,1,0.28,0.996,0.275 L0.978,0.256 C0.973,0.251,0.973,0.244,0.978,0.239 L0.996,0.22 C1,0.215,1,0.208,0.996,0.203 L0.978,0.184 C0.973,0.179,0.973,0.172,0.978,0.167 L0.996,0.148 C1,0.143,1,0.135,0.996,0.131 L0.978,0.112 C0.973,0.107,0.973,0.099,0.978,0.095"></path></clipPath>
+                </svg>
+                <AdvancedImage cldImg={imgSrc} loading="lazy" className='bs-sku-detail__image' />
+            </div>
+            <div className='bs-sku-detail__info-wrap'>
+                <ul className='bs-sku-detail__info-list'>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>collection</label>
+                        <p className='bs-sku-detail__info'>{data?.name}</p>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>rrp</label>
+                        <p className='bs-sku-detail__info'>{materialData?.rrp === null ? 'na' : inrFormat(materialData?.rrp)} <span className='bs-sku-detail__info--sm'>inclusive of all taxes</span></p>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>serial no</label>
+                        <p className='bs-sku-detail__info'>{materialData?.serialNo === null ? 'na' : materialData?.serialNo}</p>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>width</label>
+                        <p className='bs-sku-detail__info'>{materialData?.width === null ? 'na' : materialData?.width} cm</p>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>design type</label>
+                        <p className='bs-sku-detail__info'>{materialData?.designType === null ? 'na' : materialData?.designType}</p>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>end use</label>
+                        <ul className='bs-sku-detail__list-info bs-sku-detail__list-info--typ-horizontal'>
+                            {materialData?.endUse.split(',').map((item, index) => {
+                                return (
+                                    <li className='bs-sku-detail__list-info-item' key={index}>
+                                        <span className={`icon ${((item.toLowerCase()).includes('drapery') || item.toLowerCase() === 'curtain') ? 'icon-curtain' : (item.toLowerCase() === 'upholstery' || item.toLowerCase() === 'sofa' || item.toLowerCase() === 'cushions' || item.toLowerCase() === 'cushion') ? 'icon-chair' : ''} bs-sku-detail__icon`}></span>
+                                        <p className='bs-sku-detail__info'>{item}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>composition</label>
+                        <ul className='bs-sku-detail__list-info'>
+                            {materialData?.composition.split(':').map((item, index) => {
+                                return (
+                                    <li className='bs-sku-detail__list-info-item' key={index}>
+                                        <p className='bs-sku-detail__info'>{item}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>pattern repeat</label>
+                        <p className='bs-sku-detail__info'>{materialData?.hRepeat === '0' ? 'na' : materialData?.hRepeat}</p>
+                    </li>
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>gsm</label>
+                        <p className='bs-sku-detail__info'>{materialData?.gsm === null ? 'na' : materialData?.gsm}</p>
+                    </li>
+                    {materialData?.martindale &&
+                        <li className='bs-sku-detail__info-item'>
+                            <label className='bs-sku-detail__info-label'>martindale</label>
+                            <p className='bs-sku-detail__info'>{materialData?.martindale === null ? 'na' : materialData?.martindale}</p>
+                        </li>
+                    }
+                    <li className='bs-sku-detail__info-item'>
+                        <label className='bs-sku-detail__info-label'>fr</label>
+                        <p className='bs-sku-detail__info'>{materialData?.technicalProperties === null ? 'na' : materialData?.technicalProperties}</p>
+                    </li>
+                    <li className='bs-sku-detail__info-item bs-sku-detail__info-item--wash-care'>
+                        <label className='bs-sku-detail__info-label'>washcare instructions</label>
+                        <ul className='bs-sku-detail__list-info bs-sku-detail__list-info--typ-horizontal bs-sku-detail__list-info--typ-horizontal--align-start'>
+                            {materialData?.washcareInstructionMachinewash !== '0' && materialData?.washcareInstructionMachinewash !== null ?
+                                <li className='bs-sku-detail__list-info-item'>
+                                    <IconText
+                                        icon='wash-30'
+                                        title={materialData?.washcareInstructionMachinewash}
+                                    />
+                                </li>
+                            : null}
+                            {materialData?.washcareInstructionBleach !== '0' && materialData?.washcareInstructionBleach !== null ?
+                                <li className='bs-sku-detail__list-info-item'>
+                                    <IconText
+                                        icon='no-bleach'
+                                        title={materialData?.washcareInstructionBleach}
+                                    />
+                                </li>
+                            : null}
+                            {materialData?.washcareInstructionTumbleDry !== '0' && materialData?.washcareInstructionTumbleDry !== null ?
+                                <li className='bs-sku-detail__list-info-item'>
+                                    <IconText
+                                        icon='tumble-dry'
+                                        title={materialData?.washcareInstructionTumbleDry}
+                                    />
+                                </li>
+                            : null}
+                            {materialData?.washcareInstructionDryClean !== '0' && materialData?.washcareInstructionDryClean !== null ?
+                                <li className='bs-sku-detail__list-info-item'>
+                                    <IconText
+                                        icon='dry-clean'
+                                        title={materialData?.washcareInstructionDryClean}
+                                    />
+                                </li>
+                            : null}
+                            {materialData?.washcareInstructionIron !== '0' && materialData?.washcareInstructionIron !== null ?
+                                <li className='bs-sku-detail__list-info-item'>
+                                    <IconText
+                                        icon='iron'
+                                        title={materialData?.washcareInstructionIron}
+                                    />
+                                </li>
+                            : null}
+                            {materialData?.washcareInstructionCycle !== '0' && materialData?.washcareInstructionCycle !== null ?
+                                <li className='bs-sku-detail__list-info-item'>
+                                    <IconText
+                                        icon='iron'
+                                        title={materialData?.washcareInstructionCycle}
+                                    />
+                                </li>
+                            : null}
+                        </ul>
+                    </li>
+                </ul>
+                <div className='bs-sku-detail__action-wrap'>
+                    {/* <button className='bs-btn bs-btn__btn-icon-solid'>
+                        <span className='bs-btn__icon icon icon-like'></span>
+                        <span className='bs-btn__btn-text'>like</span>
+                    </button> */}
+                    <button className='bs-btn bs-btn__btn-icon-solid' onClick={handleOpenShareOptionModal}>
+                        <span className='bs-btn__icon icon icon-share'></span>
+                        <span className='bs-btn__btn-text'>share</span>
+                    </button>
+                    <Link to="/contact-us" className='bs-btn bs-btn__btn-icon-solid'>
+                        <span className='bs-btn__icon icon icon-contact'></span>
+                        <span className='bs-btn__btn-text'>contact us</span>
+                    </Link>
+                    <Link to="/where-to-buy" className='bs-btn bs-btn__btn-icon-solid'>
+                        <span className='bs-btn__icon icon icon-pin'></span>
+                        <span className='bs-btn__btn-text'>Nearest store</span>
+                    </Link>
+                </div>
+            </div>
+        </div>
+        <Modal
+            open={shareOptionModal}
+            onClose={handleCloseShareOptionModal}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className='bs-modal bs-modal--typ-sm'
+        >
+            <Box className='bs-modal__wrapper' sx={style}>
+                <div className='bs-modal__content'>
+                    <button className='bs-modal__close' onClick={handleCloseShareOptionModal}>
+                        <span className='icon icon-simple-close'></span>
+                    </button>
+                    <Share imageId={materialData?.skuImageUrl} name={data?.name} />
+                </div>
+            </Box>
+        </Modal>
+    </>
+  )
+}
+
+export default Detail

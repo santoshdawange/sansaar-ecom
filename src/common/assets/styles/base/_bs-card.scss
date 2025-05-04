@@ -1,0 +1,49 @@
+//bs-card
+.bs-card{
+    $self: &;
+    padding: rem(20px) rem(24px);
+    border-radius: rem(20px);
+
+    &--typ-border{
+        border: 1px solid $clr-border;
+    }
+
+    &--typ-bg{
+        background-color: $clr-light;
+    }
+
+    &--typ-flex{
+
+        #{$self}__title-wrap{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__title{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        text-transform: uppercase;
+
+        &--bold{
+            font-weight: $font-bold;
+        }
+
+        &--semi-bold{
+            font-weight: $font-semi-bold;
+        }
+    }
+
+    &__desc{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        margin-block-start: rem(12px);
+    }
+
+    &__info-wrap{
+        margin-block-end: rem(20px);
+    }
+
+
+}

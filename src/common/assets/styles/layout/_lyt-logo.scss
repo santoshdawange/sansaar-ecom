@@ -1,0 +1,32 @@
+.lyt-logo {
+    display: flex;
+    justify-content: center;
+    gap: rem(24px);
+    margin-block-end: rem(30px);
+    @include mq-below($sm) {
+        flex-flow: row wrap;
+        width: auto;
+    }
+    @include mq-between($sm, $md2){
+        @include orientation(portrait){
+            margin-block-end: 0;
+        }
+    }
+    &__img-wrap {
+        flex: 1 1 0;
+        max-height: rem(96px);
+        @include mq-below($sm){
+            flex: auto;
+            padding: rem(16px);
+            width: 45%;
+        }
+        @include mq-between($sm, $md2){
+            width: 20%;
+        }
+    }
+    img {
+        width: 100%;
+        margin: 0 auto;
+        object-fit: scale-down;
+    }
+}

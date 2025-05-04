@@ -1,0 +1,28 @@
+//lyt-content
+.lyt-content {
+    padding-block-start: rem(156px);
+
+    &__tpl-collection{
+        overflow-x: initial;
+    }
+
+    &__plp{
+        overflow: visible;
+    }
+
+    @include mq-below($sm) {
+        padding-block-start: rem(72px);
+    }
+
+    @include mq-between($sm2, $md2){
+        @include orientation(portrait){
+            padding-block-start: rem(120px);
+        }
+    }
+
+    @include mq-between($sm2, $lg){
+        @include orientation(portrait){
+            padding-block-start: rem(80px);
+        }
+    }
+}

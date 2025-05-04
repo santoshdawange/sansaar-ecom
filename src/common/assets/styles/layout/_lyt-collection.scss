@@ -1,0 +1,82 @@
+//lyt-collection
+.lyt-collection {
+    $self: &;
+    margin-block: rem(60px);
+    transition: all 0.3s ease;
+    position: relative;
+    display: grid;
+
+    &__filter-action {
+        position: absolute;
+        left: 0;
+        top: rem(-100px);
+        @include mq-below($sm){
+            left: auto;
+            right: 0;
+            top: rem(-94px);
+        }
+
+        .bs-btn__btn-text{
+            @include mq-below($sm){
+                display: none;
+            }
+        }
+    }
+
+    &__list-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(100px);
+
+        @include mq-below($sm){
+            grid-template-columns: repeat(1, 1fr);
+            gap: rem(40px);
+        }
+        @include mq-between($sm, $md2){
+            @include orientation(portrait){
+                grid-template-columns: repeat(2, 1fr);
+                gap: rem(40px);
+            }
+        }
+
+        @include mq-between($sm2, $lg){
+            @include orientation(portrait){
+                gap: rem(80px) rem(40px);
+            }
+        }
+    }
+
+    &__filter-open {
+        // padding-inline-start: 35%;
+        grid-template-columns: 1fr 2fr;
+        @include mq-below($md){
+            grid-template-columns: 1fr;
+        }
+        @include mq-between($md2, $lg){
+            @include orientation(portrait){
+                grid-template-columns: 2fr;
+            }
+        }
+
+        #{$self}__list-wrap {
+            grid-template-columns: repeat(2, 1fr);
+            @include mq-below($md){
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    &__filter-wrap {
+        position: sticky;
+        left: rem(59px);
+        top: rem(189px);
+        border-radius: rem(20px);
+        overflow: hidden;
+        width: rem(500px);
+        height: rem(700px);
+
+        .bs-filter{
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+//mod-filter-feature
+.mod-filter-feature{
+    text-align: center;
+    cursor: pointer;
+    &__icon-wrap{
+        width: rem(120px);
+        height: rem(120px);
+        border-radius: 100%;
+        background-color: $clr-light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-block-end: rem(12px);
+    }
+
+    &__label{
+        font-size: $fs-h8;
+        line-height: $lh-h8;
+        text-transform: uppercase;
+        font-weight: $font-medium;
+
+    }
+
+}

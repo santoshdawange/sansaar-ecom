@@ -1,0 +1,67 @@
+//bs-user-details
+.bs-user-details{
+    $self:&;
+
+    &__panel{
+        &.MuiPaper-root{
+            box-shadow: none;
+        }
+
+        &--typ-simple{
+            margin-block-start: rem(40px);
+
+            #{$self}__panel-cont{
+                padding: 0;
+            }
+        }
+    }
+
+    &__panel-head{
+        padding-inline: 0;
+        &.Mui-expanded, &.MuiAccordionSummary-root{
+            padding-inline: 0;
+        }
+
+    }
+
+    &__panel-cont{
+        padding: rem(40px) 0;
+
+        &.MuiAccordionDetails-root{
+            padding: rem(40px) 0;
+        }
+    }
+
+    .MuiAccordionSummary-content{
+        margin: rem(40px) 0;
+
+        &.Mui-expanded{
+            margin: rem(40px) 0;
+        }
+    }
+
+    &__text{
+        font-size: $fs-h4;
+        line-height: $lh-h4;
+        text-transform: uppercase;
+        color: $clr-dark;
+    }
+
+    &__panel-title{
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
+    }
+
+    &__item{
+        border-bottom: 1px dashed $clr-dark;
+        &:last-child{
+            border-bottom: none;
+        }
+
+        &--no-border{
+            border-bottom: none;
+        }
+    }
+
+}

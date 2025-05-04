@@ -1,0 +1,457 @@
+//bs-infography
+.bs-infography {
+    $self: &;
+    display: flex;
+    gap: rem(40px);
+    justify-content: space-between;
+    padding-block: rem(40px);
+    @include mq-below($sm) {
+        gap: rem(24px);
+        flex-direction: column;
+    }
+
+    @include mq-between($sm2, $md2){
+        @include orientation(portrait){
+            gap: rem(24px);
+            flex-direction: column;
+        }
+    }
+
+    &__info-wrap {
+        max-width: rem(650px);
+        // flex-grow: 1;
+        @include mq-below($sm) {
+            max-width: 100%;
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                max-width: 100%;
+            }
+        }
+
+        
+    }
+
+    &__title {
+        font-size: $fs-h2;
+        line-height: $lh-h2;
+        font-family: $font2;
+        text-transform: uppercase;
+        @include mq-below($sm) {
+            font-size: $fs-h3;
+            line-height: $lh-h3;
+        }
+    }
+
+    &__desc {
+        font-size: $fs-h5;
+        line-height: $lh-h5;
+        margin-block-end: rem(30px);
+
+        &:last-child{
+            margin-block-end: 0;
+        }
+
+        @include mq-below($sm) {
+            font-size: $fs-h8;
+            line-height: $lh-h6;
+        }
+    }
+
+    &__media-wrap {
+        width: rem(1057px);
+        height: rem(720px);
+        border-radius: rem(24px);
+        overflow: hidden;
+        position: relative;
+        // cursor: pointer;
+        @include mq-below($sm) {
+            width: 100%;
+            height: auto;
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                width: 100%;
+            }
+        }
+
+        #{$self}__play-icon{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            @include mq-below($sm) {
+                width: rem(48px);
+                height: rem(48px);
+            }
+        }
+    }
+
+    &__image {
+        transform: scale(1.05);
+    }
+
+    &__cont-wrap {
+        &--typ-quote {
+            padding-block-start: rem(200px);
+            padding-block-end: rem(100px);
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+
+            &:before {
+                @include svg-icon("../../images/icons/quote-start.svg", rem(58px), rem(42px));
+                @include background-opacity($clr-light, 1);
+                top: rem(140px);
+            }
+
+            &::after {
+                @include svg-icon("../../images/icons/quote-end.svg", rem(58px), rem(42px));
+                @include background-opacity($clr-light, 1);
+                bottom: rem(40px);
+            }
+
+            #{$self}__desc {
+                font-size: $fs-h3;
+                line-height: $lh-h2;
+                margin-block-end: rem(24px);
+                @include mq-below($sm) {
+                    font-size: $fs-h6;
+                    line-height: $lh-h5;
+                }
+            }
+        }
+    }
+
+    &--typ-reverse {
+        flex-direction: row-reverse;
+        @include mq-below($sm) {
+            flex-direction: column;
+        }
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                flex-direction: column;
+            }
+        }
+        &:not(#{$self}--no-space) {
+            gap: rem(70px);
+            @include mq-below($sm) {
+                gap: rem(48px);
+            }
+
+            #{$self}__media-wrap {
+                flex-grow: 1;
+            }
+
+            #{$self}__info-wrap {
+                padding-inline: rem(30px);
+                padding-block-start: rem(60px);
+                @include mq-below($sm) {
+                    padding-block-start: rem(0px);
+                    padding-inline: rem(16px);
+                }
+            }
+
+            #{$self}__cont-wrap {
+                padding-block: rem(60px);
+                @include mq-below($sm) {
+                    padding-block: rem(0px);
+                }
+            }
+
+            #{$self}__title {
+                margin-block-end: rem(60px);
+                @include mq-below($sm) {
+                    margin-block-end: rem(24px);
+                }
+            }
+
+            #{$self}__desc {
+                line-height: $lh-h2;
+                @include mq-below($sm) {
+                    line-height: $lh-h5;
+                }
+                @include mq-between($sm, $md2){
+                    @include orientation(portrait){
+                        line-height: $lh-h6;
+                    }
+                }
+                @include mq-between($sm2, $md2){
+                    @include orientation(portrait){
+                        line-height: $lh-h5;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    &--no-space {
+        padding-block: 0;
+        gap: 0;
+        height: rem(593px);
+        @include mq-below($sm) {
+            height: auto;
+        }
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                height: auto;
+            }
+        }
+        
+
+        #{$self}__media-wrap {
+            border-radius: 0;
+            width: rem(780px);
+            height: 100%;
+            @include mq-below($sm) {
+                width: 100%;
+            }
+            @include mq-between($sm2, $md2){
+                @include orientation(portrait){
+                    height: rem(593px);
+                    width: 100%;
+                }
+            }
+        }
+
+        #{$self}__info-wrap {
+            flex: 1;
+            max-width: initial;
+            padding: rem(80px) rem(100px);
+            @include mq-below($sm) {
+                padding: rem(40px) rem(16px);
+            }
+        }
+
+        #{$self}__title {
+            margin-block-end: rem(24px);
+        }
+
+        #{$self}__image {
+            transform: scale(1);
+        }
+    }
+
+    &--typ-video {
+        #{$self}__info-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-inline: rem(140px);
+            max-width: initial;
+            @include mq-below($sm) {
+                padding-inline: rem(16px);
+            }
+        }
+
+        #{$self}__desc {
+            font-size: $fs-h3;
+            line-height: $lh-h2;
+            @include mq-below($sm) {
+                font-size: $fs-h8;
+                line-height: $lh-h6;
+            }
+        }
+    }
+
+    &--typ-sm {
+        display: grid;
+        grid-template-columns: 1.5fr 2fr;
+        @include mq-below($sm) {
+            display: flex;
+            flex-direction: column;
+        }
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        #{$self}__info-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-inline: rem(150px);
+            max-width: initial;
+            @include mq-below($sm) {
+                padding-inline: rem(16px);
+            }
+            @include mq-between($sm, $md2){
+                @include orientation(landscape){
+                    padding-inline: rem(16px);
+                }
+            }
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    padding-inline: rem(38px);
+                }
+            }
+        }
+
+        #{$self}__media-wrap {
+            width: rem(887px);
+            height: rem(480px);
+            margin-left: auto;
+            @include mq-below($sm) {
+                width: 100%;
+                height: rem(280px);
+                margin-block-start: rem(24px);
+            }
+            @include mq-between($sm, $md2){
+                @include orientation(portrait){
+                    width: 100%;
+                    height: rem(450px);
+                    margin-block-start: rem(90px);
+                }
+            }
+            @include mq-between($sm2, $lg){
+                @include orientation(portrait){
+                    height: rem(550px);
+                }
+            }
+        }
+
+        #{$self}__cont-wrap {
+            &--typ-quote {
+    
+                padding: 0; 
+                
+                &::before,
+                &::after {
+                    @include background-opacity($clr-white, 1);
+                    position: absolute;
+                }
+
+                &::before{
+                    top: rem(-80px);
+                    @include mq-below($sm){
+                        top: rem(-50px);
+                    }
+                }
+
+                &::after{
+                    bottom: rem(-80px);
+                    @include mq-below($sm){
+                        bottom: rem(-30px);
+                    }
+                    @include mq-between($sm2, $md2){
+                        @include orientation(portrait){
+                            bottom: rem(-64px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--typ-vertical{
+        flex-direction: column;
+        padding: rem(100px) rem(240px);
+        gap: 0;
+        align-items: center;
+
+        @include mq-below($sm) {
+            padding: rem(40px) rem(20px);
+            // gap: rem(48px) 0;
+        }
+
+        @include mq-between($sm2, $md2){
+            @include orientation(portrait){
+                padding: rem(60px) rem(50px);
+                // gap: rem(48px) 0;
+            }
+        }
+
+        #{$self}__info-wrap{
+            width: 100%;
+            max-width: initial;
+            margin-block-end: rem(120px);
+
+            @include mq-below($sm) {
+                margin-block-end: rem(64px);
+            }
+    
+            @include mq-between($sm2, $md2){
+                @include orientation(portrait){
+                    margin-block-end: rem(64px);
+                }
+            }
+        }
+
+        #{$self}__title{
+            margin-block-end: rem(60px);
+
+            @include mq-below($sm) {
+                margin-block-end: rem(32px);
+            }
+    
+            @include mq-between($sm2, $md2){
+                @include orientation(portrait){
+                    margin-block-end: rem(32px);
+                }
+            }
+        }
+
+        #{$self}__media-wrap{
+            width: rem(1228px);
+            height: rem(690px);
+
+            @include mq-below($sm) {
+                width: 100%;
+                height: rem(220px);
+                border-radius: rem(12px);
+            }
+
+            @include mq-between($sm2, $md2){
+                @include orientation(portrait){
+                    width: 100%;
+                }
+            }
+
+            @include mq-between($sm, $lg){
+                @include orientation(portrait){
+                    height: rem(400px);
+                }
+            }
+
+            @include mq-between($md2, $lg){
+                @include orientation(portrait){
+                    height: rem(580px);
+                }
+            }
+        }
+
+        #{$self}__img{
+            @include mq-below($sm){
+                object-fit: contain;
+                transform: scale(1);
+            }
+        }
+    }
+
+    &--typ-film-list{
+        #{$self}__info-wrap{
+            margin-block-end: rem(12px);
+            text-align: left;
+        }
+    }
+
+    &--typ-full{
+        padding-block: 0;
+        #{$self}__media-wrap{
+            width: 100%;
+        }
+    }
+}

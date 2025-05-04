@@ -1,0 +1,95 @@
+/* element.scss */
+
+* {
+  outline: 0;
+  box-sizing: border-box;
+}
+
+// *::-webkit-media-controls {
+//   display: none !important;
+// }
+
+// *::-webkit-media-controls-panel {
+//   display: none !important;
+//   -webkit-appearance: none;
+// }
+
+// *::--webkit-media-controls-play-button {
+//   display: none !important;
+//   -webkit-appearance: none;
+// }
+
+// *::-webkit-media-controls-start-playback-button {
+//   display: none !important;
+//   -webkit-appearance: none;
+// }
+
+h1,
+h2,
+h3,
+h4.h5 {
+  margin: 0;
+  line-height: 110%;
+}
+
+p {
+  line-height: 110%;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+button {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  //   @include mq-below($xs) {
+  //     display: none;
+  //   }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// textarea:-webkit-autofill,
+// textarea:-webkit-autofill:hover,
+// textarea:-webkit-autofill:focus,
+// select:-webkit-autofill,
+// select:-webkit-autofill:hover,
+// select:-webkit-autofill:focus {
+//   border: 1px solid var($--form-input-bg-color-variant-2);
+//   -webkit-text-fill-color: var($--form-input-text-color);
+//   -webkit-box-shadow: 0 0 0px 1000px var($--form-input-bg-color-variant-2) inset;
+//   transition: background-color 5000s ease-in-out 0s;
+// }

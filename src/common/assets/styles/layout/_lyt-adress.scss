@@ -1,0 +1,11 @@
+//lyt-adress
+.lyt-adress{
+    $self:&;
+    display: flex;
+    flex-direction: column;
+    gap: rem(40px);
+
+    &--typ-billing{
+        gap: rem(12px);
+    }
+}

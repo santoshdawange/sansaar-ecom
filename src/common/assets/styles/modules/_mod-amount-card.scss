@@ -1,0 +1,37 @@
+//mod-amount-card
+.mod-amount-card{
+    $self:&;
+    background-color: $clr-white;
+    border-radius: rem(24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: rem(30px);
+
+    &__title{
+        font-size: $fs-h4;
+        line-height: $lh-h4;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+        margin-block-end: rem(4px);
+    }
+
+    &__amount{
+        font-size: $fs-h2-sm;
+        line-height: $lh-h2-sm;
+        margin-block: rem(10px);
+    }
+
+    &__info{
+        font-size: $fs-h6;
+        line-height: $lh-h6;
+        color: $clr-grey-3;
+        margin-block-end: rem(20px);
+    }
+
+    &__action-btn{
+        border-radius: rem(12px);
+    }
+
+}
